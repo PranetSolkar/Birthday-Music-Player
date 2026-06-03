@@ -1,0 +1,158 @@
+.container{
+    background-color: #ffe5ec;
+    height: 500px;
+    width: 400px;
+    border-radius: 15px;
+    padding: 1px;
+    margin: 10px;
+    
+    
+}
+
+.base{
+    background-color: #9e0059;
+    height: 70%;
+    width: 80%;
+    margin: 32px;
+    border-radius: 15px;
+    border-top: 3px solid #39009980;
+    border-bottom: 10px solid #39009980;
+    border-left: 3px solid #39009980;
+    border-right: 3px solid #39009980;
+    padding: 1%;
+}
+
+
+.baseTop{
+    /* margin: 10px; */
+    background-color: #9e0059;
+}
+.leftRound{
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    background-color: black;
+    border-radius: 70%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leftRound1{
+    height: 22px;
+    width: 22px;
+    margin: auto;
+    background-color: black;
+    border-radius: 100%;
+    border:2px solid #9e0059 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leftRound2{
+    height: 5px;
+    width: 5px;
+    margin: auto;
+    background-color: #9e0059;
+    border-radius: 100%;
+    /* border:1px solid #9e0059 ; */
+}
+
+
+
+
+
+
+
+
+.middleTemp{
+    height: 250px;
+    width: 250px;
+    background-color: blueviolet;
+    margin: auto;
+    border-radius: 100%;
+    position:relative;
+}
+
+
+
+
+
+.baseBottom{
+    /* width:25%; */
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position:absolute;
+    z-index: 10; */
+}
+.bottomLeft{
+    display: flex;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -50px;
+    
+}
+.bottomLeft .leftCircle{
+    height: 22px;
+    width: 22px;
+    margin: auto;
+    border-radius: 100%;
+    background-color: black;
+    border: 1px solid #ffe5ec;
+    
+}
+.bottomLeft .leftSquare{
+    height: 15px;
+    width: 25px;
+    background-color: black;
+    /* border: 1px solid white; */
+    display: flex;
+    align-items: center;
+    /* align-self: flex-end; */
+}
+.bottomLeft .leftInnerSquare{
+    height: 5px;
+    width: 15px;
+    background-color: black;
+    border: 1px solid #ffe5ec;
+    margin: auto;
+}
+.bottomRight .volume{
+    height: 120px;
+    width: 22px;
+    background-color: #590d2280;
+    margin-top: -100px;
+    border-radius: 3px;
+    display: flex;
+}
+.volume .volume1{
+    height:90%;
+    width:30%;
+    background-color: black;
+    border-radius: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+.volume .volumeSquare{
+    height: 9px;
+    width: 15px;
+    background-color: white;
+    margin-top: 30px; 
+    
+}
+
+
+.player{
+    height: 10%;
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
