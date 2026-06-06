@@ -1,0 +1,94 @@
+.vinyl{
+    z-index: 14;
+    /* position: absolute; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* margin-right: 32px; */
+    /* background-color: red; */
+    
+}
+
+.outerDisc{
+    background-color: black;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    /* background: repeating-radial-gradient( circle, #111 0px, #111 2px, rgb(87, 82, 82) 3px, #111 4px); */
+    /* transition: transform infinite 2s; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.grooves{
+    background-color: black;
+    width: 205px;
+    height: 205px;
+    border-radius: 50%;
+    background: repeating-radial-gradient( circle, #111 0px, #111 2px, #222 3px, #111 4px);
+    border: 2px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin{
+    to{
+        rotate: 1turn;
+    }
+}
+
+.outerDisc:hover{
+    animation: spin 7s linear infinite;
+}
+
+.innerCircle1{
+    background-color: #222;
+    border: 20px solid #111;
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.img img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.vinylTitle{
+    width: 200px;
+    padding: 0;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 1px;
+}
+.vinylTitle h2{
+    /* background-color: green; */
+    margin: 0;
+}
+.vinylTitle p{
+    /* background-color: #fff; */
+    margin: 0;
+}
+
+
