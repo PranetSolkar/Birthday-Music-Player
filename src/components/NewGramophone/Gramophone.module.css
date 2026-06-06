@@ -5,6 +5,8 @@
     border-radius: 15px;
     padding: 1px;
     margin: 10px;
+    z-index: 1;
+    /* position: relative; */
     
     
 }
@@ -20,6 +22,7 @@
     border-left: 3px solid #39009980;
     border-right: 3px solid #39009980;
     padding: 1%;
+    position: relative;
 }
 
 
