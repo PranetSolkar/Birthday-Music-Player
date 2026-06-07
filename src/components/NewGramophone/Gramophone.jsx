@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from'./Gramophone.module.css'
 import Arm from '../ToneArm/Arm'
+import Controls from './Controls'
 
-const Gramophone = () => {
+const Gramophone = (props) => {
   return (
     <div className={styles.container}>
       {/* <h1>hello</h1> */}
@@ -47,6 +48,21 @@ const Gramophone = () => {
       </div>
 
       <div className={styles.player}>
+
+        <Controls 
+          isPlaying={props.isPlaying} 
+          toggleMusic={props.toggleMusic} 
+          previousSong={props.previousSong} 
+          nextSong={props.nextSong} 
+          handleSeek={props.handleSeek} 
+          handleVolume={props.handleVolume} 
+          formatTime={props.formatTime}
+          currentTime={props.currentTime}
+          duration={props.duration}
+          currentVolume={props.currentVolume}
+          currentTitle={props.currentTitle}
+          currentArtist={props.currentArtist}
+        />
 
       </div>
       

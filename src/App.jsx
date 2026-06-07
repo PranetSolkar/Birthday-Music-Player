@@ -9,16 +9,36 @@ const App = () => {
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio());
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [currentVolume, setCurrentVolume] = useState(1);
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [currentArtist, setCurrentArtist] = useState("");
+
+  const [discInserted, setDiscInserted] = useState(false);
+  const [armPlaced, setArmPlaced] = useState(false);
+  const [showCollection, setShowCollection] = useState(true);
+  const [showGallery, setShowGallery] = useState(false);
+  
 
   //brain of website
   function handleSongClick(song) {
     setCurrentSong(song);
+    setCurrentTitle(song.title);
+    setCurrentArtist(song.artist);
 
     audioRef.current.src = song.audio;
     audioRef.current.play();
 
     setIsPlaying(true);
 
+    audioRef.current.onloadedmetadata = ()=>{
+      setDuration(audioRef.current.duration);
+    };
+
+    audioRef.current.ontimeupdate = () => {
+      setCurrentTime(audioRef.current.currentTime);
+    };
 
 
   }
@@ -59,65 +79,68 @@ const App = () => {
     handleSongClick(songs[nextIndex]);
   }
 
+  function handleSeek(event){
+    audioRef.current.currentTime = event.target.value;
+
+    setCurrentTime(event.target.value);
+  }
+
+  function handleVolume(){
+    audioRef.current.volume = event.target.value;
+    setCurrentVolume(Math.floor(event.target.value*100));
+  }
+
+
+  function formatTime(seconds){
+    if(!seconds) return "0:00";
+
+    const minutes = Math.floor(seconds/60)
+
+    const remainingSeconds = Math.floor(seconds%60);
+
+    return `${minutes}:${remainingSeconds.toString().padStart(2,"0")}`
+
+
+  }
+
 
 
 
 
   return (
-    // <div>
-    //   {
-    //     songs.map((song)=>(
-        
-          
-    //         // <button
-    //         // key={song.id}
-    //         // onClick={()=>handleSongClick(song)}
-    //         // >
-    //         //   {song.title}
-    //         // </button>
-    //         <VinylDisc key={song.id} song={song} onClick={()=>handleSongClick(song)} />
-           
-    //     ))
-    //   }
-
-    //   <h2>
-    //     Current Song: {currentSong?.title}
-    //   </h2>
-    //   <h2>
-    //     Status: {isPlaying ? "Playing" : "Paused"}
-    //   </h2>
-    //   <button onClick={previousSong}>Previous</button>
-    //   <button onClick={toggleMusic}>{isPlaying ? "Pause" : "Play"}</button>
-    //   <button onClick={nextSong}>Next</button>
-    // </div>
     
-
-
+    
     <div className='mainContainer'>
+      {showCollection &&
       <div className='songContainer1'>
         {
           songs.map((song)=>(
           
-            
-              // <button
-              // key={song.id}
-              // onClick={()=>handleSongClick(song)}
-              // >
-              //   {song.title}
-              // </button>
-              <VinylDisc key={song.id} song={song} onClick={()=>handleSongClick(song)} />
+            <VinylDisc key={song.id} song={song} onClick={()=>handleSongClick(song)} />
             
           ))
         }
-        {/* <VinylDisc/>
-        <VinylDisc/>
-        <VinylDisc/>
-        <VinylDisc/>
-        <VinylDisc/>
-        <VinylDisc/> */}
+        
       </div>
+      }
 
-      <Gramophone/>
+      <Gramophone 
+        isPlaying={isPlaying} 
+        toggleMusic={toggleMusic} 
+        previousSong={previousSong} 
+        nextSong={nextSong} 
+        handleSeek={handleSeek} 
+        handleVolume={handleVolume} 
+        formatTime={formatTime}
+        currentTime={currentTime}
+        duration={duration}
+        currentVolume={currentVolume}
+        currentTitle={currentTitle}
+        currentArtist={currentArtist}
+      />
+
+      
+      <button onClick={()=>setShowCollection(false)}>Show Gallery</button>
       
     </div>
   )

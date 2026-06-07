@@ -1,0 +1,112 @@
+.parentControls{
+    /* background-color: blue; */
+    width:400px;
+    /* margin-top:20px; */
+}
+
+.title{
+    /* background-color: blue; */
+    margin-top: 0;
+    margin-bottom: 5px;
+
+}
+.title h2{
+    margin: 0 0 0 35px;
+    height: 27px;
+    /* background-color: aqua; */
+}
+.title p{
+    margin: -2px 0 0 37px;
+    height: 16px;
+    /* background-color: red; */
+    font-size: 13px;
+}
+
+
+
+
+
+.control{
+    background-color: lightcoral;
+    width: 90%;
+    margin: 0 0 0 3%;
+    border-radius: 15px;
+    padding: 7px;
+    border: 2px solid rgba(128, 0, 0, 0.534);
+}
+.controlBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 10px;
+    /* background-color: green; */
+    margin-top: 3px;
+    
+
+}
+.controlBtn button{
+    /* background: transparent; */
+    border: none;
+    border-radius: 50%;
+    /* background-color: white; */
+    height:40px;
+    width:40px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back, .next{
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+.play_pause{
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.range1{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    margin: 10px 0 0 0;
+    /* background-color: red; */
+}
+.progressBar{
+    width: 300px;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+.progressBar::-webkit-slider-runnable-track{
+    background-color: gray;
+    height: 5px;
+    border-radius: 20px;
+}
+
+.progressBar::-webkit-slider-thumb{
+    appearance: none;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background-color: purple;
+
+    border: none;
+
+    margin-top: -3px;
+}
+.progressBar::-webkit-slider-thumb:hover{
+    transform: scale(1.2);
+}
+
