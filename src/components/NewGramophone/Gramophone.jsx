@@ -37,6 +37,8 @@ const Gramophone = (props) => {
             setIsReturning={props.setIsReturning}
             
             playerControls={props.playerControls}
+            setIsPlaying={props.setIsPlaying}
+            toggleMusic={props.toggleMusic}
             />
         </div>
 
@@ -79,6 +81,8 @@ const Gramophone = (props) => {
           currentVolume={props.currentVolume}
           currentTitle={props.currentTitle}
           currentArtist={props.currentArtist}
+
+          fadeTitle={props.fadeTitle}
         />
 
       </div>

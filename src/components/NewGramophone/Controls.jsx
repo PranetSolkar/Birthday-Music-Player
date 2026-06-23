@@ -1,14 +1,19 @@
 import React from 'react'
 import styles from './Controls.module.css'
 import {SkipBack, SkipForward, Play, Pause} from 'lucide-react'
+import { motion } from "framer-motion";
 
 const Controls = (props) => {
   return (
     <div className={styles.parentControls}>
 
         <div className={styles.title}>
+            <motion.div animate={props.fadeTitle}>
             <h2>{props.currentTitle}</h2>
+            </motion.div>
+            <motion.div animate={props.fadeTitle}>
             <p>{props.currentArtist}</p>
+            </motion.div>
         </div>
 
 

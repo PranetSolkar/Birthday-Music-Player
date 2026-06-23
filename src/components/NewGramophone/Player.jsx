@@ -6,26 +6,39 @@ const Player = (props) => {
     const activeSong = props.currentSong || props.newSong
 
     if (!props.currentSong) return null;
+    if (!activeSong) return null;
 
     return (
         <motion.div
             // layoutId={`song-${props.currentSong.id}`}
-            layoutId={`song-${activeSong.id}`}
-            // onLayoutAnimationComplete={{
+            // // layoutId={`song-${activeSong.id}`}
+            // className={styles.middleTempTop}
+            // onLayoutAnimationComplete={()=>{
+            //     props.setIsPlaying(true)
+            //     props.toggleMusic()
                 
             // }}
             // animation={{
             //     rotate: props.isPlaying? 360 : 0 
             // }}
+        
             // transition={{
-            //     duration: 3,
-            //     repeat: Infinity,
+            //     duration: 2,
             //     ease: "linear" 
             // }}
             
             >
             <motion.div 
-                // layoutId={`song-${props.currentSong.id}`} 
+                layoutId={`song-${props.currentSong.id}`} 
+                onLayoutAnimationComplete={()=>{
+                    props.setIsPlaying(true)
+                    props.toggleMusic()
+                    
+                }}
+                transition={{
+                    duration: 2,
+                    ease: "linear" 
+                }}
                 className={styles.middleTemp}
                 animate={props.playerControls}
                 // animate={{

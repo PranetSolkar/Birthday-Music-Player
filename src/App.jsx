@@ -24,6 +24,7 @@ const App = () => {
   // const discControls = useAnimationControls();
   const playerControls = useAnimationControls();
   const toneArmControls = useAnimationControls();
+  const fadeTitle = useAnimationControls();
 
   const [discRotation, setDiscRotation] = useState(false)
 
@@ -44,13 +45,72 @@ const App = () => {
       setCurrentSong(song);
       setCurrentTitle(song.title);
       setCurrentArtist(song.artist);
+      await fadeTitle.start({
+        opacity: 1,
+        transition: {
+          duration: 1
+        }
+      })
       audioRef.current.src = song.audio;
       setDiscRotation(true);
-      
+
       return;
     }
 
-    setNewSong(song); 
+    console.log("newSong")
+
+    if(currentSong){
+      setNewSong(song);
+      // toggleMusic();
+      if(isPlaying || newSong){
+        console.log("newSongif")
+        await toneArmControls.start({
+            rotate: 0,
+            transition: {
+                duration: 1
+            }
+        });
+        playerControls.start({
+            rotate: 0,
+            transition: {
+                duration: 0
+            }
+        });
+        audioRef.current.pause();
+        setIsPlaying(false);
+        await fadeTitle.start({
+          opacity: 0,
+          transition: {
+            duration: 1
+          }
+        })
+        setCurrentTitle("");
+        setCurrentArtist("");
+        audioRef.current.src = null;
+        
+
+        
+      }
+      // else{
+      //   await toneArmControls.start({
+      //       rotate: 25,
+      //       transition: {
+      //           duration: 1
+      //       }
+      //   });
+      //   playerControls.start({
+      //       rotate: 360,
+      //       transition: {
+      //           duration: 5,
+      //           repeat: Infinity,
+      //           ease: "linear"
+      //       }
+      //   });
+        
+      //   audioRef.current.play();
+      //   setIsPlaying(true);
+      // }
+    }
     setIsReturning(true);
     setCurrentSong(null);
 
@@ -60,14 +120,6 @@ const App = () => {
     // audioRef.current.play();
 
     // setIsPlaying(true);
-    
-    // audioRef.current.onloadedmetadata = ()=>{
-    //   setDuration(audioRef.current.duration);
-    // };
-
-    // audioRef.current.ontimeupdate = () => {
-    //   setCurrentTime(audioRef.current.currentTime);
-    // };
 
 
   }
@@ -209,6 +261,7 @@ const App = () => {
         toneArmControls={toneArmControls}
 
         playerControls={playerControls}
+        fadeTitle={fadeTitle}
       />
 
       

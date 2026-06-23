@@ -9,6 +9,7 @@ const VinylDisc = (props) => {      //either write props in the argument or {son
 
   return (
     <div className={styles.parent}>
+      
       <div className={styles.vinyl}>
         {!isSelected && (
           <motion.div 
@@ -16,7 +17,11 @@ const VinylDisc = (props) => {      //either write props in the argument or {son
             onClick={props.onClick} 
             className={styles.outerDisc}
 
-           
+            // whileHover={{
+            //   scale: 2,
+            //   rotate: 360
+            // }}
+
             // transition={{
             //     duration: 3
             // }}
@@ -37,6 +42,7 @@ const VinylDisc = (props) => {      //either write props in the argument or {son
           <p>{props.song.artist}</p>
         </div> */}
       </div>
+      
 
       <div className={styles.vinylTitle}>
           <h2>{props.song.title}</h2>

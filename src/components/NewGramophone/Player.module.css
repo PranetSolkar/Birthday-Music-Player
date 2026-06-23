@@ -1,3 +1,17 @@
+.middleTempTop{
+    height: 220px;
+    width: 220px;
+    background-color: blue;
+    margin: auto;
+    border-radius: 50%;
+    position:absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    
+}
+
 .middleTemp{
     height: 220px;
     width: 220px;
