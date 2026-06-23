@@ -2,6 +2,7 @@ import React from 'react'
 import styles from'./Gramophone.module.css'
 import Arm from '../ToneArm/Arm'
 import Controls from './Controls'
+import Player from './Player'
 
 const Gramophone = (props) => {
   return (
@@ -17,10 +18,26 @@ const Gramophone = (props) => {
           </div>
         </div>
         
-        <Arm/>
+        <Arm
+          isPlaying={props.isPlaying}
+          discRotation={props.discRotation}
+          audioRef={props.audioRef}
+          setIsPlaying={props.setIsPlaying}
+          toneArmControls={props.toneArmControls}
+        />
         
         <div className={styles.middleTemp}>
-
+          <Player 
+            currentSong={props.currentSong} 
+            isPlaying={props.isPlaying} 
+            setCurrentSong={props.setCurrentSong} 
+            setNewSong={props.setNewSong} 
+            newSong={props.newSong}
+            isReturning={props.isReturning}
+            setIsReturning={props.setIsReturning}
+            
+            playerControls={props.playerControls}
+            />
         </div>
 
         <div className={styles.baseBottom}>

@@ -1,7 +1,12 @@
 import React from 'react'
 import styles from './Arm.module.css'
+import { motion } from 'framer-motion'
 
-const Arm = () => {
+const Arm = (props) => {
+
+    console.log("Arm rendered");
+    console.log("isPlaying =", props.isPlaying);
+
   return (
     <div>
         <div className={styles.arm}>
@@ -14,7 +19,24 @@ const Arm = () => {
         
             </div>
 
-            <div className={styles.pivot}>
+            <motion.div     
+                animate={props.toneArmControls}
+                // animate={{
+                //     rotate: props.discRotation ? 27 : 0
+
+                // }}        
+                // transition={{
+                //     duration: 2
+
+                // }}
+                className={styles.pivot}
+
+                onAnimationComplete={()=>{
+                    props.audioRef.current.play();
+                    props.setIsPlaying(true);
+                }}
+                
+                >
 
                 <div className={styles.armExtend}>
                     <div className={styles.extend1}>
@@ -31,7 +53,7 @@ const Arm = () => {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
 
         </div>
       
@@ -39,4 +61,4 @@ const Arm = () => {
   )
 }
 
-export default Arm
+export default React.memo(Arm)

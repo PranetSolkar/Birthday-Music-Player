@@ -42,3 +42,9 @@ body{
   flex-direction: column;
   gap: 10px;
 } */
+
+.gallery{
+  background-color: bisque;
+  height: 90vh;
+  width: 58vw;
+}
