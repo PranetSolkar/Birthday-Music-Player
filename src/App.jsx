@@ -4,8 +4,8 @@ import VinylDisc from './components/Vinyl/VinylDisc'
 import './index.css'
 import {useState, useRef, useEffect} from 'react'
 import {songs} from './data/songs.js'
-import { LayoutGroup } from "framer-motion";
-import { useAnimationControls } from "framer-motion";
+import { LayoutGroup, useAnimationControls, AnimatePresence, motion } from "framer-motion";
+
 
 const App = () => {
   const [currentSong, setCurrentSong] = useState(null);
@@ -26,6 +26,8 @@ const App = () => {
   const toneArmControls = useAnimationControls();
   const fadeTitle = useAnimationControls();
 
+  const [galleryMode, setGalleryMode] = useState(false);
+
   const [discRotation, setDiscRotation] = useState(false)
 
   //useEffect
@@ -35,6 +37,9 @@ const App = () => {
     };
     audioRef.current.ontimeupdate = () => {
       setCurrentTime(audioRef.current.currentTime);
+    };
+    audioRef.current.onended = () => {
+      nextSong();
     };
   }, []);
   
@@ -53,6 +58,9 @@ const App = () => {
       })
       audioRef.current.src = song.audio;
       setDiscRotation(true);
+
+      autoShowGallery();
+      
 
       return;
     }
@@ -174,13 +182,13 @@ const App = () => {
     handleSongClick(songs[previousIndex]);
   }
 
-  function nextSong(){
+  async function nextSong(){
     if (!currentSong) return;
     const currentIndex = songs.findIndex(
       songs => songs.id === currentSong.id
     );
     const nextIndex = (currentIndex + 1) % songs.length;
-    handleSongClick(songs[nextIndex]);
+    await handleSongClick(songs[nextIndex]);
   }
 
   function handleSeek(event){
@@ -193,7 +201,6 @@ const App = () => {
     setCurrentVolume(Math.floor(event.target.value*100));
   }
 
-
   function formatTime(seconds){
     if(!seconds) return "0:00";
     const minutes = Math.floor(seconds/60)
@@ -201,6 +208,20 @@ const App = () => {
     return `${minutes}:${remainingSeconds.toString().padStart(2,"0")}`
   }
 
+  // function hideCollection(){
+  //   setTimeout(()=>{
+  //     setShowCollection(false);
+  //     setShowGallery(true);
+  //   },4000)
+  // }
+
+  function autoShowGallery(){
+    setTimeout(()=>{
+        setGalleryMode(true);
+        console.log("gallery mode true")
+    },7000);
+
+}
 
 
 
@@ -210,8 +231,12 @@ const App = () => {
     
     
     <div className='mainContainer'>
-      {showCollection &&
-      <div className='songContainer1'>
+      <div className= 'contentArea'>
+      <AnimatePresence>
+
+      <motion.div 
+        className= { galleryMode ? "songContainerHidden" : 'songContainer1' }
+        >
         {
           songs.map((song)=>(
           
@@ -220,20 +245,28 @@ const App = () => {
               song={song} 
               onClick={()=>handleSongClick(song)} 
               currentSong={currentSong} 
-              isPlaying={isPlaying} 
-              
+              isPlaying={isPlaying}           
               />
-            
           ))
         }
-      </div>
-      }
+      </motion.div>
+      
 
-      { showGallery &&
-        <div className='gallery'>
+      </AnimatePresence>
+
+
+      <AnimatePresence>
+
+      
+        <motion.div 
+          className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
+          >
           Photo Gallery
-        </div>
-      }
+        </motion.div>
+      
+
+      </AnimatePresence>
+      </div>
 
       <Gramophone 
         isPlaying={isPlaying} 
@@ -262,6 +295,7 @@ const App = () => {
 
         playerControls={playerControls}
         fadeTitle={fadeTitle}
+        // hideCollection={hideCollection}
       />
 
       

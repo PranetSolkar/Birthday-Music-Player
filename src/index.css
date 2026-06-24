@@ -12,10 +12,29 @@ body{
 
 }
 
+.contentArea{
+  background-color: pink;
+  margin: 10px;
+  padding: 12px;
+  height: 90vh;
+  width: 58vw;
+  border-radius: 15px;
+  /* display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 10px;
+  column-gap: 30px; */
+  align-items: center;
+  justify-items: center;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  overflow: visible;
+  position: relative;
+
+}
 .songContainer1{
   background-color: #cdb4db;
   border: 2px solid #9e005950;
-  margin: 10px;
+  /* margin: 10px; */
   padding: 12px;
   height: 90vh;
   width: 58vw;
@@ -26,9 +45,14 @@ body{
   column-gap: 30px;
   align-items: start;
   justify-items: center;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
   /* flex-direction: column; */
   /* flex-wrap: wrap; */
   overflow: visible;
+  position: absolute;
   
 }
 /* .songContainer1, .songContainer2{
@@ -44,8 +68,72 @@ body{
   gap: 10px;
 } */
 
-.gallery{
-  background-color: bisque;
+.galleryVisible{
+  background-color: pink;
+  border: 2px solid #9e005950;
+  /* margin: 10px; */
+  padding: 12px;
   height: 90vh;
   width: 58vw;
+  border-radius: 15px;
+  align-items: start;
+  justify-items: center;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  overflow: visible;
+  position: absolute;
+  top:0;
+  left:0;
+
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 3s ease;
+}
+
+.songContainerHidden{
+  background-color: #cdb4db;
+  border: 2px solid #9e005950;
+  /* margin: 10px; */
+  padding: 12px;
+  height: 90vh;
+  width: 58vw;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  row-gap: 10px;
+  column-gap: 30px;
+  align-items: start;
+  justify-items: center;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  overflow: visible;
+  position: absolute;
+  top:0;
+  left:0;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 3s ease;
+}
+
+.galleryHidden{
+  background-color: red;
+  border: 2px solid #9e005950;
+  /* margin: 10px; */
+  padding: 12px;
+  height: 90vh;
+  width: 58vw;
+  border-radius: 15px;
+  align-items: start;
+  justify-items: center;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  overflow: visible;
+  position: absolute;
+  top:0;
+  left:0;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 3s ease;
 }

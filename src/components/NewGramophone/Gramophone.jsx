@@ -20,7 +20,7 @@ const Gramophone = (props) => {
         
         <Arm
           isPlaying={props.isPlaying}
-          discRotation={props.discRotation}
+          // discRotation={props.discRotation}
           audioRef={props.audioRef}
           setIsPlaying={props.setIsPlaying}
           toneArmControls={props.toneArmControls}
@@ -39,6 +39,8 @@ const Gramophone = (props) => {
             playerControls={props.playerControls}
             setIsPlaying={props.setIsPlaying}
             toggleMusic={props.toggleMusic}
+
+            // hideCollection={props.hideCollection}
             />
         </div>
 

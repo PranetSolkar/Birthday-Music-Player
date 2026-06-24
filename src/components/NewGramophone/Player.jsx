@@ -31,8 +31,15 @@ const Player = (props) => {
             <motion.div 
                 layoutId={`song-${props.currentSong.id}`} 
                 onLayoutAnimationComplete={()=>{
-                    props.setIsPlaying(true)
+                    // props.setIsPlaying(true)
                     props.toggleMusic()
+                    
+
+                    if(props.newSong){
+                        props.setCurrentSong(props.newSong);
+                        props.setNewSong(null);
+                        console.log("hello")
+                    }
                     
                 }}
                 transition={{
@@ -49,13 +56,14 @@ const Player = (props) => {
                 //     repeat: Infinity,
                 //     ease: "linear" 
                 // }}
-                onAnimationComplete={()=>{
 
-                    if(newSong){
-                        setCurrentSong(newSong);
-                        setNextSong(null);
-                    }
-                }}
+                // onAnimationComplete={()=>{
+
+                //     if(props.newSong){
+                //         props.setCurrentSong(props.newSong);
+                //         props.setNewSong(null);
+                //     }
+                // }}
                     
                 
                 >
