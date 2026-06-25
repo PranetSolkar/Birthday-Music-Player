@@ -1,6 +1,7 @@
 import React from 'react'
 import Gramophone from './components/NewGramophone/Gramophone'
 import VinylDisc from './components/Vinyl/VinylDisc'
+import Gallery from './components/Gallery/Gallery.jsx'
 import './index.css'
 import {useState, useRef, useEffect} from 'react'
 import {songs} from './data/songs.js'
@@ -219,7 +220,7 @@ const App = () => {
     setTimeout(()=>{
         setGalleryMode(true);
         console.log("gallery mode true")
-    },7000);
+    },6000);
 
 }
 
@@ -261,7 +262,8 @@ const App = () => {
         <motion.div 
           className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
           >
-          Photo Gallery
+          {/* Photo Gallery */}
+          {galleryMode && <Gallery/>}
         </motion.div>
       
 
