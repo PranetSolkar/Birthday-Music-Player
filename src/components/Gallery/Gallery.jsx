@@ -3,7 +3,10 @@ import styles from './Gallery.module.css'
 import { motion } from 'framer-motion'
 import { div } from 'framer-motion/client'
 import Polaroid from './Polaroid'
-// import paradiseCover from 'src/assets/VinylImages/coldplay_paradise.jpg'
+
+import paradiseCover from '../../assets/VinylImages/coldplay_paradise.jpg'
+import dusty from '../../assets/VinylImages/dusty.jpeg'
+import paradise1 from '../../assets/VinylImages/paradise1.jpeg'
 
 const Gallery = () => {
 
@@ -12,7 +15,7 @@ const Gallery = () => {
 
     const photos = [
     {
-        src:"/assets/VinylImages/coldplay_paradise.jpg",
+        src: paradiseCover,
         caption:"Best Day ❤️",
         top:"20%",
         left:"10%",
@@ -23,7 +26,7 @@ const Gallery = () => {
     },
 
     {
-        src:"/assets/VinylImages/dusty.jpeg",
+        src: dusty,
         caption:"Goa Trip",
         top:"50%",
         left:"20%",
@@ -34,7 +37,7 @@ const Gallery = () => {
     },
 
     {
-        src:"/assets/VinylImages\paradise1.jpeg",
+        src: paradise1,
         caption:"Memories",
         top:"30%",
         left:"60%",
@@ -86,8 +89,38 @@ const Gallery = () => {
                     John Wick
             </motion.span>
 
-            <motion.div className={styles.message}>
-                Hello my name is Pranet.
+            <motion.div 
+                className={styles.message1}
+                
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{
+                    delay:13,
+                    duration:5
+                }}
+                >
+                <p className={styles.message1Title}>Bhagwan kare...</p> 
+                <p className={styles.message1Content1}>
+                    Tere life mai itna happiness aaye ki..... 🎂</p> 
+                <p className={styles.message1Content2}>
+                    Monday suddha Friday sarkha vatava.😉</p>    
+                    
+                
+            </motion.div>
+            <motion.div 
+                className={styles.message2}
+                
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{
+                    delay:13,
+                    duration:5
+                }}
+                >
+                <p className={styles.message2Title}>Developer's Note</p>
+                <p className={styles.message2P1}>Sleep schedule sacrifice kiya hai...Aur bugs ke sath friendship....</p>
+                <p className={styles.message2P2}>Just to see you smile.</p>
+
             </motion.div>
         </motion.h1>
 
@@ -97,7 +130,7 @@ const Gallery = () => {
             initial={{opacity:0}}
             animate={{opacity:1}}
             transition={{
-                delay:13,
+                delay:20,
                 duration:7
             }}
             >

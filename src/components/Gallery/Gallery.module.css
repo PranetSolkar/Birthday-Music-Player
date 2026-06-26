@@ -2,6 +2,8 @@
     width:100%;
     height:100%;
     background:transparent;
+    /* background-color: blue; */
+    border-radius: 15px;
     /* padding: 12px; */
     
     position:absolute;
@@ -17,10 +19,11 @@
     left:50%;
     margin-top:-5px;
     transform:translateX(-50%);
-    font-size:7rem;
+    font-size:6rem;
     /* font-family: "Dancing Script", cursive; */
     font-family: "Great Vibes", cursive;
     /* font-family: "Waterfall", cursive; */
+    font-weight: 500;
     white-space:nowrap;
     overflow:hidden;
     /* color:#ffffff90; */
@@ -31,19 +34,94 @@
     flex-direction:column;
     align-items:center;
 }
-span{
+/* span{
     font-weight: 100;
+} */
+
+.message1{
+    background-color: white;
+    /* border: 2px solid #80008070; */
+    border-radius: 10px;
+    height: 80px;
+    width: 670px;
+    margin-top: 15px;
+    
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 0;
+}
+.message1Title{
+    margin-top: 0;
+    padding-top: 20px;
+    margin-bottom: -7px;
+    font-family: "Charm", cursive;
+    font-size: 20px;
+    font-weight: 600;
+    /* background-color: blue; */
+}
+.message1Content1{
+    margin-top: 0;
+    margin-bottom: -5px;
+    font-family: "Charm", cursive;
+    /* font-family: "Dancing Script", cursive; */
+    font-size: 18px;
+    letter-spacing: 1px;
+    
+    /* background-color: brown; */
+}
+.message1Content2{
+    margin-top:0;
+    font-family: "Charm", cursive;
+    /* font-family: "Dancing Script", cursive; */
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
-.message{
+
+
+.message2{
     background-color: white;
     border-radius: 10px;
     height: 80px;
-    width: 650px;
-    margin-top: 20px;
-    font-family: "Waterfall", cursive;
-    font-size: 30px;
+    width: 600px;
+    margin-top: 15px;
+    padding: 0;
+    
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 0;
 }
+/* .message2 p{
+    margin: 0;
+    
+} */
+.message2Title{
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-family: "Special Elite", system-ui;
+    font-size: 17px;
+    text-decoration: underline;
+    font-weight: 600;
+    /* background-color: green; */
+}
+.message2P1{
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-family: "Special Elite", system-ui;
+    font-size: 15px;
+    /* background-color: blue; */
+}
+.message2P2{
+    margin-top:4px;
+    font-family: "Special Elite", system-ui;
+    font-size: 20px;
+}
+
 
 .photoArea{
     background: transparent;

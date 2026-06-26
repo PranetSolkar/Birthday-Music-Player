@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import styles from './Polaroid.module.css'
 
 const Polaroid = ({photo}) => {
+    console.log(photo.src)
   return (
     <motion.div 
         className={styles.polaroid}
