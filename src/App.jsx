@@ -335,48 +335,52 @@ const App = () => {
       </AnimatePresence>
       </div>
 
-      <Gramophone 
-        isPlaying={isPlaying} 
-        toggleMusic={toggleMusic} 
-        previousSong={previousSong} 
-        nextSong={nextSong} 
-        handleSeek={handleSeek} 
-        handleVolume={handleVolume} 
-        formatTime={formatTime}
-        currentTime={currentTime}
-        duration={duration}
-        currentVolume={currentVolume}
-        currentTitle={currentTitle}
-        currentArtist={currentArtist}
-        currentSong={currentSong}      
-        setCurrentSong={setCurrentSong}
-        setNewSong={setNewSong}
-        newSong={newSong}
-        isReturning={isReturning}
-        setIsReturning={setIsReturning}
+      <div className='rightPanel'>
 
-        discRotation={discRotation}
-        audioRef={audioRef}
-        setIsPlaying={setIsPlaying}
-        toneArmControls={toneArmControls}
-
-        playerControls={playerControls}
-        fadeTitle={fadeTitle}
-        // hideCollection={hideCollection}
-      />
-
-      
-      
-      <button
+        <button
+          className='gallerySwitch'
           onClick={()=>{
               setGalleryMode(!galleryMode);
           }}
-      >
-        {
-            galleryMode ? "Choose Another Song" : "Back to Gallery"
-        }
-      </button>
-      
+        >
+          {
+              galleryMode ? "🎵 Song Collection" : "🎞️ Memory Gallery"
+              // 📸📷🎥🎦📹🎶🎵🎞️🎞️🎞️🎬
+          }
+        </button>
+
+        <Gramophone 
+          isPlaying={isPlaying} 
+          toggleMusic={toggleMusic} 
+          previousSong={previousSong} 
+          nextSong={nextSong} 
+          handleSeek={handleSeek} 
+          handleVolume={handleVolume} 
+          formatTime={formatTime}
+          currentTime={currentTime}
+          duration={duration}
+          currentVolume={currentVolume}
+          currentTitle={currentTitle}
+          currentArtist={currentArtist}
+          currentSong={currentSong}      
+          setCurrentSong={setCurrentSong}
+          setNewSong={setNewSong}
+          newSong={newSong}
+          isReturning={isReturning}
+          setIsReturning={setIsReturning}
+
+          discRotation={discRotation}
+          audioRef={audioRef}
+          setIsPlaying={setIsPlaying}
+          toneArmControls={toneArmControls}
+
+          playerControls={playerControls}
+          fadeTitle={fadeTitle}
+          // hideCollection={hideCollection}
+        />
+
+      </div>
+
     </div>
     </LayoutGroup>
   )

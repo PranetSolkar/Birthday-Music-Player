@@ -70,7 +70,8 @@ body{
 
 .galleryVisible{
   background-color: pink;
-  border: 2px solid #9e005950;
+  /* background-color: #c9184a70; */
+  border: 2px solid #9e005990;
   /* margin: 10px; */
   padding: 12px;
   height: 90vh;
@@ -136,4 +137,52 @@ body{
   opacity: 0;
   pointer-events: none;
   transition: all 3s ease;
+}
+
+
+ .rightPanel{
+  margin-left: 8px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1px;
+ }
+
+ .gallerySwitch{
+  height: 38px;
+  width: 212px;
+  /* padding-top: 1px; */
+  padding-bottom: 0;
+  background-color: #9e005950;
+  border:none;
+  border-bottom: 3px solid #89023e80;
+  border-radius: 10px;
+  color:#3b2b14;
+  /* background-color: #af2bbf90; */
+  
+  cursor: pointer;
+
+  font-size:19px;
+  font-family:"Special Elite", system-ui;
+  /* letter-spacing:1px; */
+
+  box-shadow: 0 8px 10px rgba(0,0,0,.15);
+  transition:all 0.3s ease;
+ }
+
+ .gallerySwitch:hover{
+  background-color: #9e005970;
+  /* background-color: #f0808090; */
+  transform:
+      translateY(-2px)
+      scale(1.07);
+ }
+
+ .gallerySwitch:active{
+
+    transform:
+        translateY(2px)
+        scale(1);
+
 }
