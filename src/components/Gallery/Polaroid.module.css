@@ -1,5 +1,7 @@
 .polaroid{
-    background: white;
+    background-color: #f5eccd;
+    color: var(--polaroid-color);
+
     /* height: 220px;
     width: 180px; */
     position: absolute;

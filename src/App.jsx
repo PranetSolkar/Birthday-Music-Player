@@ -37,6 +37,7 @@ const App = () => {
 
   const [galleryMode, setGalleryMode] = useState(false);
   const [startGalleryIntro, setStartGalleryIntro] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const [discRotation, setDiscRotation] = useState(false)
 
@@ -62,19 +63,19 @@ const App = () => {
         await happyControls.start({
           clipPath: "inset(0 0% 0 0)",
           transition:{
-            duration:4
+            duration:5
           }
         });
         await birthdayControls.start({
           clipPath: "inset(0 0% 0 0)",
           transition:{
-            duration:4
+            duration:5
           }
         });
         await nameControls.start({
           clipPath: "inset(0 0% 0 0)",
           transition:{
-            duration:4
+            duration:5
           }
         });
         await messageControls.start({
@@ -90,18 +91,26 @@ const App = () => {
               duration:5
             }
           });
-        },5000);
+        },6000);
         // await photoControls.start({
         //   opacity:1,
         //   transition:{
         //     duration:7
         //   }
         // });
-        setIntroPlayed(false);
+        // setIntroPlayed(false);
+        // setStartGalleryIntro(false);
     }
     playIntro();
-}, [startGalleryIntro]);
-  
+  }, [startGalleryIntro]);
+
+  useEffect(() => {
+    document.body.setAttribute(
+        "data-theme",
+        darkMode ? "dark" : "light"
+    );
+  }, [darkMode]);
+    
 
   //brain of website
   async function handleSongClick(song) {
@@ -133,7 +142,7 @@ const App = () => {
         await toneArmControls.start({
             rotate: 0,
             transition: {
-                duration: 1
+                duration: 3
             }
         });
         playerControls.start({
@@ -190,7 +199,7 @@ const App = () => {
       await toneArmControls.start({
           rotate: 0,
           transition: {
-              duration: 1
+              duration: 3
           }
       });
       playerControls.start({
@@ -208,7 +217,7 @@ const App = () => {
       await toneArmControls.start({
           rotate: 25,
           transition: {
-              duration: 1
+              duration: 3
           }
       });
       playerControls.start({
@@ -261,12 +270,6 @@ const App = () => {
     return `${minutes}:${remainingSeconds.toString().padStart(2,"0")}`
   }
 
-  // function hideCollection(){
-  //   setTimeout(()=>{
-  //     setShowCollection(false);
-  //     setShowGallery(true);
-  //   },4000)
-  // }
 
   function autoShowGallery(){
     setTimeout(()=>{
@@ -284,6 +287,15 @@ const App = () => {
 
 
   return (
+    <>
+
+    <button
+      className="themeSwitch"
+      onClick={() => setDarkMode(!darkMode)}  
+    >
+        {darkMode ? "☀" : "🌙"}
+
+    </button>
     <LayoutGroup>
     
     
@@ -337,17 +349,25 @@ const App = () => {
 
       <div className='rightPanel'>
 
-        <button
-          className='gallerySwitch'
-          onClick={()=>{
-              setGalleryMode(!galleryMode);
-          }}
-        >
-          {
-              galleryMode ? "🎵 Song Collection" : "🎞️ Memory Gallery"
-              // 📸📷🎥🎦📹🎶🎵🎞️🎞️🎞️🎬
-          }
-        </button>
+        <div className='toggleBtns'>
+
+          <button
+            className='gallerySwitch'
+            onClick={()=>{
+                setGalleryMode(!galleryMode);
+            }}
+          >
+            {
+                galleryMode ? "🎵 Song Collection" : "🎞️ Memory Gallery"
+                // 📸📷🎥🎦📹🎶🎵🎞️🎞️🎞️🎬
+            }
+          </button>
+
+          
+
+        </div>
+
+        
 
         <Gramophone 
           isPlaying={isPlaying} 
@@ -383,6 +403,7 @@ const App = () => {
 
     </div>
     </LayoutGroup>
+    </>
   )
 }
 

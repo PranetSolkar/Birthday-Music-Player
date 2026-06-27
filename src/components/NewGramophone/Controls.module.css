@@ -27,12 +27,14 @@
 
 
 .control{
-    background-color: lightcoral;
+    /* background-color: lightcoral; */
+    background-color: var(--control);
     width: 90%;
     margin: 0 0 0 3%;
     border-radius: 15px;
     padding: 7px;
-    border: 2px solid rgba(128, 0, 0, 0.534);
+    /* border: 2px solid #80000088; */
+    border: 2px solid var(--control-border);
 }
 .controlBtn{
     display: flex;
@@ -40,16 +42,12 @@
     justify-content: center;
     justify-items: center;
     column-gap: 10px;
-    /* background-color: green; */
     margin-top: 3px;
-    
-
 }
 .controlBtn button{
     /* background: transparent; */
     border: none;
     border-radius: 50%;
-    /* background-color: white; */
     height:40px;
     width:40px;
     display:flex;
@@ -61,12 +59,15 @@
 .back, .next{
     background: transparent;
     border: none;
-    color: black;
+    /* color: black; */
+    color: var(--prev-next);
 }
 
 .play_pause{
-    background-color: black;
-    color: white;
+    /* background-color: black; */
+    background-color: var(--prev-next);
+    /* color: white; */
+    color: var(--play-pause);
 }
 
 
