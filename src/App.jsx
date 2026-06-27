@@ -8,6 +8,7 @@ import {songs} from './data/songs.js'
 import { LayoutGroup, useAnimationControls, AnimatePresence, motion } from "framer-motion";
 
 
+
 const App = () => {
   const [currentSong, setCurrentSong] = useState(null);
   const [newSong, setNewSong] = useState(null);
@@ -26,8 +27,16 @@ const App = () => {
   const playerControls = useAnimationControls();
   const toneArmControls = useAnimationControls();
   const fadeTitle = useAnimationControls();
+  //Gallery Animation Controls
+  const happyControls = useAnimationControls();
+  const birthdayControls = useAnimationControls();
+  const nameControls = useAnimationControls();
+  const messageControls = useAnimationControls();
+  const photoControls = useAnimationControls();
+
 
   const [galleryMode, setGalleryMode] = useState(false);
+  const [startGalleryIntro, setStartGalleryIntro] = useState(false);
 
   const [discRotation, setDiscRotation] = useState(false)
 
@@ -42,7 +51,56 @@ const App = () => {
     audioRef.current.onended = () => {
       nextSong();
     };
+    
   }, []);
+
+  useEffect(() => {
+
+    if(!startGalleryIntro) return;
+
+    async function playIntro(){
+        await happyControls.start({
+          clipPath: "inset(0 0% 0 0)",
+          transition:{
+            duration:4
+          }
+        });
+        await birthdayControls.start({
+          clipPath: "inset(0 0% 0 0)",
+          transition:{
+            duration:4
+          }
+        });
+        await nameControls.start({
+          clipPath: "inset(0 0% 0 0)",
+          transition:{
+            duration:4
+          }
+        });
+        await messageControls.start({
+          opacity:1,
+          transition:{
+            duration:5
+          }
+        });
+        setTimeout(()=>{
+          photoControls.start({
+            opacity:1,
+            transition:{
+              duration:5
+            }
+          });
+        },5000);
+        // await photoControls.start({
+        //   opacity:1,
+        //   transition:{
+        //     duration:7
+        //   }
+        // });
+        setIntroPlayed(false);
+    }
+    playIntro();
+}, [startGalleryIntro]);
   
 
   //brain of website
@@ -60,9 +118,8 @@ const App = () => {
       audioRef.current.src = song.audio;
       setDiscRotation(true);
 
-      autoShowGallery();
+      await autoShowGallery();
       
-
       return;
     }
 
@@ -123,12 +180,7 @@ const App = () => {
     setIsReturning(true);
     setCurrentSong(null);
 
-    // setCurrentTitle(song.title);
-    // setCurrentArtist(song.artist);
-    // audioRef.current.src = song.audio;
-    // audioRef.current.play();
-
-    // setIsPlaying(true);
+    
 
 
   }
@@ -220,6 +272,10 @@ const App = () => {
     setTimeout(()=>{
         setGalleryMode(true);
         console.log("gallery mode true")
+        // setStartGalleryIntro(true);
+        setTimeout(()=>{
+          setStartGalleryIntro(true);
+        },3000);
     },6000);
 
 }
@@ -263,7 +319,16 @@ const App = () => {
           className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
           >
           {/* Photo Gallery */}
-          {galleryMode && <Gallery/>}
+          {/* {galleryMode && <Gallery/>} */}
+          {/* {galleryMode && <Gallery introPlayed={introPlayed} happy={happy}/>} */}
+          <Gallery 
+            galleryMode={galleryMode} 
+            happyControls={happyControls}
+            birthdayControls={birthdayControls}
+            nameControls={nameControls}
+            messageControls={messageControls}
+            photoControls={photoControls}
+            />
         </motion.div>
       
 
@@ -302,7 +367,15 @@ const App = () => {
 
       
       
-      <button onClick={()=>{setShowCollection(false); setShowGallery(true)}}>Show Gallery</button>
+      <button
+          onClick={()=>{
+              setGalleryMode(!galleryMode);
+          }}
+      >
+        {
+            galleryMode ? "Choose Another Song" : "Back to Gallery"
+        }
+      </button>
       
     </div>
     </LayoutGroup>

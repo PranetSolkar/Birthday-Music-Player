@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Gallery.module.css'
-import { motion } from 'framer-motion'
+import { motion , useAnimationControls } from 'framer-motion'
 import { div } from 'framer-motion/client'
 import Polaroid from './Polaroid'
 
@@ -8,7 +8,7 @@ import paradiseCover from '../../assets/VinylImages/coldplay_paradise.jpg'
 import dusty from '../../assets/VinylImages/dusty.jpeg'
 import paradise1 from '../../assets/VinylImages/paradise1.jpeg'
 
-const Gallery = () => {
+const Gallery = (props) => {
 
     console.log("Gallery rendered");
     
@@ -67,24 +67,27 @@ const Gallery = () => {
             >
             <motion.span 
                 initial={{ clipPath:"inset(0 100% 0 0)" }}
-                animate={{ clipPath:"inset(0 0% 0 0)" }}
-                transition={{ delay:3, duration:3 }}
+                animate={props.happyControls}
+                // animate={{ clipPath:"inset(0 0% 0 0)" }}
+                // transition={{ delay:11, duration:3 }}
                 >
                     Happy
             </motion.span>
 
             <motion.span
                 initial={{ clipPath:"inset(0 100% 0 0)" }}
-                animate={{ clipPath:"inset(0 0% 0 0)" }}
-                transition={{ delay:6, duration:3 }}
+                animate={props.birthdayControls}
+                // animate={{ clipPath:"inset(0 0% 0 0)" }}
+                // transition={{ delay:14, duration:3 }}
                 >
                     Birthday
             </motion.span>  
 
             <motion.span
                 initial={{ clipPath:"inset(0 100% 0 0)" }}
-                animate={{ clipPath:"inset(0 0% 0 0)" }}
-                transition={{ delay:9, duration:3 }}
+                animate={props.nameControls}
+                // animate={{ clipPath:"inset(0 0% 0 0)" }}
+                // transition={{ delay:18, duration:3 }}
                 >
                     John Wick
             </motion.span>
@@ -93,11 +96,12 @@ const Gallery = () => {
                 className={styles.message1}
                 
                 initial={{opacity:0}}
-                animate={{opacity:1}}
-                transition={{
-                    delay:13,
-                    duration:5
-                }}
+                animate={props.messageControls}
+                // animate={{opacity:1}}
+                // transition={{
+                //     delay:21,
+                //     duration:5
+                // }}
                 >
                 <p className={styles.message1Title}>Bhagwan kare...</p> 
                 <p className={styles.message1Content1}>
@@ -111,11 +115,12 @@ const Gallery = () => {
                 className={styles.message2}
                 
                 initial={{opacity:0}}
-                animate={{opacity:1}}
-                transition={{
-                    delay:13,
-                    duration:5
-                }}
+                animate={props.messageControls}
+                // animate={{opacity:1}}
+                // transition={{
+                //     delay:21,
+                //     duration:5
+                // }}
                 >
                 <p className={styles.message2Title}>Developer's Note</p>
                 <p className={styles.message2P1}>Sleep schedule sacrifice kiya hai...Aur bugs ke sath friendship....</p>
@@ -128,11 +133,15 @@ const Gallery = () => {
             className={styles.photoArea}
 
             initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{
-                delay:20,
-                duration:7
-            }}
+            animate={props.photoControls}
+            // animate={{opacity:1}}
+            // transition={{
+            //     delay:29,
+            //     duration:5
+            // }}
+            // onAnimationComplete={()=>{
+            //     setIntroPlayed(false);
+            // }}
             >
 
                 {/* {photos.map(()=>(
