@@ -52,4 +52,51 @@ export const songs = [{
     audio: suit_tieAudio,
     img: suit_tieCover,
     artist: "Justin Timberlake"
+},
+
+{
+    id: 7,
+    title: "Paradise" ,
+    audio: paradiseAudio,
+    img: paradiseCover,
+    artist: "Coldplay"
+},
+
+{
+    id: 8,
+    title: "Dusty" ,
+    audio: dustyAudio,
+    img: dustyCover,
+    artist: "Unknown"
+},
+
+{
+    id: 9,
+    title: "Suit & Tie" ,
+    audio: suit_tieAudio,
+    img: suit_tieCover,
+    artist: "Justin Timberlake"
+},
+{
+    id: 10,
+    title: "Paradise" ,
+    audio: paradiseAudio,
+    img: paradiseCover,
+    artist: "Coldplay"
+},
+
+{
+    id: 11,
+    title: "Dusty" ,
+    audio: dustyAudio,
+    img: dustyCover,
+    artist: "Unknown"
+},
+
+{
+    id: 12,
+    title: "Suit & Tie" ,
+    audio: suit_tieAudio,
+    img: suit_tieCover,
+    artist: "Justin Timberlake"
 }];

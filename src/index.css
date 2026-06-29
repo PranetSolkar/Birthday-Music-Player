@@ -425,6 +425,18 @@ body{
 
     }
 
+    .songContainer1,
+    .songContainerHidden{
+
+        grid-template-columns:repeat(2,1fr);
+
+        justify-items:center;
+
+        column-gap:20px;
+        row-gap:24px;
+
+    }
+
 }
 
 
@@ -483,6 +495,17 @@ body{
         font-size:16px;
         top:10px;
         right:10px;
+
+    }
+
+    .songContainer1,
+    .songContainerHidden{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+        row-gap:30px;
 
     }
 

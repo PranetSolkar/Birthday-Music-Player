@@ -1,6 +1,8 @@
 .parent{
     height: 272px;
     width: 220px;
+
+    transform-origin:top center;
 }
 
 .vinyl{
@@ -106,3 +108,52 @@
 }
 
 
+
+
+@media (max-width:1200px){
+
+    .parent{
+
+        transform:scale(.92);
+        transform-origin:top center;
+
+        width:220px;
+        height:250px;
+
+    }
+
+}
+
+
+@media (max-width:900px){
+
+    .parent{
+
+        /* transform:scale(.9); */
+
+        transform:scale(.82);
+        transform-origin:top center;
+
+        width:220px;
+        height:220px;
+
+    }
+
+}
+
+
+@media (max-width:600px){
+
+    .parent{
+
+        /* transform:scale(.9); */
+
+        transform:scale(.72);
+        transform-origin:top center;
+
+        width:220px;
+        height:190px;
+
+    }
+
+}
