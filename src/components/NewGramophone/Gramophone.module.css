@@ -171,3 +171,51 @@
     /* background-color: brown; */
 
 }
+
+.gramophoneWrapper{
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    transform-origin:top center;
+    /* overflow:hidden; */
+
+}
+
+
+
+@media (max-width:1200px){
+
+    .gramophoneWrapper{
+
+        transform:scale(.9);
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .gramophoneWrapper{
+
+        transform:scale(.8);
+
+        height:446px;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .gramophoneWrapper{
+
+        transform:scale(.68);
+
+        height:380px;
+
+    }
+
+}
+

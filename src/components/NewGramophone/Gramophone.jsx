@@ -6,6 +6,9 @@ import Player from './Player'
 
 const Gramophone = (props) => {
   return (
+  <div className={styles.gramophoneWrapper}>
+
+   
     <div className={styles.container}>
       {/* <h1>hello</h1> */}
       <div className={styles.base}>
@@ -90,6 +93,8 @@ const Gramophone = (props) => {
       </div>
       
     </div>
+
+  </div>   
   )
 }
 
