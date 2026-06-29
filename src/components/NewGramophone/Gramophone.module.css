@@ -105,7 +105,7 @@
     gap: 10px;
     margin-top: -50px;
     position: relative;
-    
+    z-index: 6;
 }
 .bottomLeft .leftCircle{
     height: 32px;

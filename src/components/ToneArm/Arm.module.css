@@ -2,7 +2,7 @@
     position: absolute;
     top: 20px;
     right: 10px;
-    z-index: 10;
+    /* z-index: 9; */
 }
 
 .rectangle{
@@ -19,8 +19,6 @@
     width: 7px;
     margin-left: 11.5px;
     position: relative;
-    
-    
 }
 
 .pivot{
@@ -66,7 +64,7 @@
     top: 10px;
     right: 28px;
     border-radius: 3px;
-    
+    z-index: 10;
 }
 .extend2{
     /* background-color: #ffe5ec; */
@@ -78,6 +76,7 @@
     right: 47px;
     transform: rotate(45deg);
     border-radius: 3px;
+    z-index: 10;
 }
 
 
@@ -104,4 +103,5 @@
     top: 115px;
     right: 72px;
     transform: rotate(-45deg);
+    z-index: 10;
 }

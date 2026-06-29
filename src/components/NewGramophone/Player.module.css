@@ -22,6 +22,7 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
+    z-index:9;
     
 }
 
@@ -50,7 +51,7 @@
     justify-content: center;
 }
 
-@keyframes spin{
+/* @keyframes spin{
     to{
         rotate: 1turn;
     }
@@ -58,7 +59,7 @@
 
 .outerDisc:hover{
     animation: spin 7s linear infinite;
-}
+} */
 
 .innerCircle1{
     background-color: #222;

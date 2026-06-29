@@ -153,9 +153,19 @@ body{
   bottom:0;
   /* flex-direction: column; */
   /* flex-wrap: wrap; */
-  overflow: visible;
+  /* overflow: visible; */
+  opacity:1;
+  pointer-events: auto;
+  transition: all 3s ease;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
   position: absolute;
   
+}
+.songContainer1::-webkit-scrollbar{
+  display: none;
 }
 
 
@@ -209,7 +219,14 @@ body{
   opacity: 0;
   pointer-events: none;
   transition: all 3s ease;
+
+  overflow-y: auto;
+  overflow-x: hidden;
 }
+.songContainerHidden::-webkit-scrollbar{
+  display: none;
+}
+
 
 .galleryHidden{
   background-color: red;
