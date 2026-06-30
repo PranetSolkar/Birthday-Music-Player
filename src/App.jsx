@@ -6,6 +6,7 @@ import './index.css'
 import {useState, useRef, useEffect} from 'react'
 import {songs} from './data/songs.js'
 import { LayoutGroup, useAnimationControls, AnimatePresence, motion } from "framer-motion";
+import Loader from "./components/Loader/Loader";
 
 
 
@@ -41,6 +42,8 @@ const App = () => {
 
   const [discRotation, setDiscRotation] = useState(false)
 
+  const [loading, setLoading] = useState(true);
+
   //useEffect
   useEffect(() => {
     audioRef.current.onloadedmetadata = () => {
@@ -52,6 +55,7 @@ const App = () => {
     audioRef.current.onended = () => {
       nextSong();
     };
+
     
   }, []);
 
@@ -104,13 +108,31 @@ const App = () => {
     playIntro();
   }, [startGalleryIntro]);
 
+
+  // Theme Toggle Effect
   useEffect(() => {
     document.body.setAttribute(
         "data-theme",
         darkMode ? "dark" : "light"
     );
   }, [darkMode]);
+
+
+  // Loader Effect
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    const timer = setTimeout(() => {
+        setLoading(false);
+        document.body.style.overflow = "auto";
+    },5200);
+
+    return ()=>{
+        document.body.style.overflow="auto";
+        clearTimeout(timer);
+    }
+},[]);
     
+
 
   //brain of website
   async function handleSongClick(song) {
@@ -163,6 +185,7 @@ const App = () => {
         setCurrentArtist("");
         audioRef.current.src = null;
         
+        
 
         
       }
@@ -188,6 +211,7 @@ const App = () => {
     }
     setIsReturning(true);
     setCurrentSong(null);
+  
 
     
 
@@ -289,120 +313,143 @@ const App = () => {
   return (
     <>
 
-    <button
-      className="themeSwitch"
-      onClick={() => setDarkMode(!darkMode)}  
-    >
-        {darkMode ? "☀" : "🌙"}
-
-    </button>
-    <LayoutGroup>
-    
-    
-    <div className='mainContainer'>
-      <div className= 'contentArea'>
-      <AnimatePresence>
-
-      <motion.div 
-        className= { galleryMode ? "songContainerHidden" : 'songContainer1' }
-        >
-        {
-          songs.map((song)=>(
-          
-            <VinylDisc 
-              key={song.id} 
-              song={song} 
-              onClick={()=>handleSongClick(song)} 
-              currentSong={currentSong} 
-              isPlaying={isPlaying}           
-              />
-          ))
-        }
-      </motion.div>
-      
-
+      <AnimatePresence mode="wait">
+        {loading && <Loader />}
       </AnimatePresence>
 
+      {!loading && (
 
-      <AnimatePresence>
+        <motion.div
 
-      
-        <motion.div 
-          className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
-          >
-          {/* Photo Gallery */}
-          {/* {galleryMode && <Gallery/>} */}
-          {/* {galleryMode && <Gallery introPlayed={introPlayed} happy={happy}/>} */}
-          <Gallery 
-            galleryMode={galleryMode} 
-            happyControls={happyControls}
-            birthdayControls={birthdayControls}
-            nameControls={nameControls}
-            messageControls={messageControls}
-            photoControls={photoControls}
-            />
-        </motion.div>
-      
-
-      </AnimatePresence>
-      </div>
-
-      <div className='rightPanel'>
-
-        <div className='toggleBtns'>
-
-          <button
-            className='gallerySwitch'
-            onClick={()=>{
-                setGalleryMode(!galleryMode);
+            initial={{
+                opacity:0,
+                scale:.98
             }}
-          >
-            {
-                galleryMode ? "🎵 Song Collection" : "🎞️ Memory Gallery"
-                // 📸📷🎥🎦📹🎶🎵🎞️🎞️🎞️🎬
-            }
-          </button>
 
-          
+            animate={{
+                opacity:1,
+                scale:1
+            }}
 
-        </div>
+            transition={{
+                duration:.9,
+                ease:"easeOut"
+            }}
 
-        
+        >
 
-        <Gramophone 
-          isPlaying={isPlaying} 
-          toggleMusic={toggleMusic} 
-          previousSong={previousSong} 
-          nextSong={nextSong} 
-          handleSeek={handleSeek} 
-          handleVolume={handleVolume} 
-          formatTime={formatTime}
-          currentTime={currentTime}
-          duration={duration}
-          currentVolume={currentVolume}
-          currentTitle={currentTitle}
-          currentArtist={currentArtist}
-          currentSong={currentSong}      
-          setCurrentSong={setCurrentSong}
-          setNewSong={setNewSong}
-          newSong={newSong}
-          isReturning={isReturning}
-          setIsReturning={setIsReturning}
+            <button
+              className="themeSwitch"
+              onClick={() => setDarkMode(!darkMode)}  
+            >
+                {darkMode ? "☀" : "🌙"}
 
-          discRotation={discRotation}
-          audioRef={audioRef}
-          setIsPlaying={setIsPlaying}
-          toneArmControls={toneArmControls}
+            </button>
+            <LayoutGroup>
+            
+            
+            <div className='mainContainer'>
+              <div className= 'contentArea'>
+              <AnimatePresence>
 
-          playerControls={playerControls}
-          fadeTitle={fadeTitle}
-          // hideCollection={hideCollection}
-        />
+              <motion.div 
+                className= { galleryMode ? "songContainerHidden" : 'songContainer1' }
+                >
+                {
+                  songs.map((song)=>(
+                  
+                    <VinylDisc 
+                      key={song.id} 
+                      song={song} 
+                      onClick={()=>handleSongClick(song)} 
+                      currentSong={currentSong} 
+                      isPlaying={isPlaying}           
+                      />
+                  ))
+                }
+              </motion.div>
+              
+              </AnimatePresence>
 
-      </div>
 
-    </div>
-    </LayoutGroup>
+              <AnimatePresence>
+
+                <motion.div 
+                  className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
+                  >
+                  {/* Photo Gallery */}
+                  {/* {galleryMode && <Gallery/>} */}
+                  {/* {galleryMode && <Gallery introPlayed={introPlayed} happy={happy}/>} */}
+                  <Gallery 
+                    galleryMode={galleryMode} 
+                    happyControls={happyControls}
+                    birthdayControls={birthdayControls}
+                    nameControls={nameControls}
+                    messageControls={messageControls}
+                    photoControls={photoControls}
+                    />
+                </motion.div>
+              
+              </AnimatePresence>
+              </div>
+
+              <div className='rightPanel'>
+
+                <div className='toggleBtns'>
+
+                  <button
+                    className='gallerySwitch'
+                    onClick={()=>{
+                        setGalleryMode(!galleryMode);
+                    }}
+                  >
+                    {
+                        galleryMode ? "🎵 Song Collection" : "🎞️ Memory Gallery"
+                    }
+                  </button>
+
+                </div>
+
+                
+
+                <Gramophone 
+                  isPlaying={isPlaying} 
+                  toggleMusic={toggleMusic} 
+                  previousSong={previousSong} 
+                  nextSong={nextSong} 
+                  handleSeek={handleSeek} 
+                  handleVolume={handleVolume} 
+                  formatTime={formatTime}
+                  currentTime={currentTime}
+                  duration={duration}
+                  currentVolume={currentVolume}
+                  currentTitle={currentTitle}
+                  currentArtist={currentArtist}
+                  currentSong={currentSong}      
+                  setCurrentSong={setCurrentSong}
+                  setNewSong={setNewSong}
+                  newSong={newSong}
+                  isReturning={isReturning}
+                  setIsReturning={setIsReturning}
+
+                  discRotation={discRotation}
+                  audioRef={audioRef}
+                  setIsPlaying={setIsPlaying}
+                  toneArmControls={toneArmControls}
+
+                  playerControls={playerControls}
+                  fadeTitle={fadeTitle}
+                  // hideCollection={hideCollection}
+                />
+
+              </div>
+
+            </div>
+            </LayoutGroup>
+
+        </motion.div>   
+
+      )} 
     </>
   )
 }
