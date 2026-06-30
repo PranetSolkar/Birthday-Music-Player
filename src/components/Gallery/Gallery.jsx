@@ -51,19 +51,13 @@ const Gallery = (props) => {
     console.log("gallery rendered")
 
   return (
+  
+
+    
     <div className={styles.galleryContainer}>
+        <div className={styles.galleryWrapper}>
         <motion.h1
             className={styles.heading}
-            // initial={{
-            //     clipPath:"inset(0 100% 0 0)"
-            // }}
-            // animate={{
-            //     clipPath:"inset(0 0% 0 0)"
-            // }}
-            // transition={{
-            // duration: 5,
-            // ease: "easeInOut"
-            // }}
             >
             <motion.span 
                 initial={{ clipPath:"inset(0 100% 0 0)" }}
@@ -91,7 +85,9 @@ const Gallery = (props) => {
                 >
                     John Wick
             </motion.span>
+        </motion.h1>
 
+        <div className={styles.messageWrapper}>
             <motion.div 
                 className={styles.message1}
                 
@@ -127,7 +123,7 @@ const Gallery = (props) => {
                 <p className={styles.message2P2}>Just to see you smile.</p>
 
             </motion.div>
-        </motion.h1>
+        </div>
 
         <motion.div 
             className={styles.photoArea}
@@ -150,14 +146,16 @@ const Gallery = (props) => {
                     </motion.div>
 
                 ))} */}
-                {photos.map((photo)=>(
-                    <Polaroid photo={photo} />
+                {photos.map((photo,index)=>(
+                    <Polaroid key={index} photo={photo} />
                     ))
                 }
 
         </motion.div>
+        </div> 
       
     </div>
+   
   )
 }
 

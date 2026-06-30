@@ -28,3 +28,46 @@
 /* .caption{
     color:white;
 } */
+
+
+@media (max-width:1200px){
+
+.polaroid{
+
+    transform:scale(.9);
+
+    transform-origin:center;
+
+}
+
+}
+
+
+
+@media (max-width:900px){
+
+.polaroid{
+
+    transform:scale(.75);
+
+}
+
+}
+
+
+@media (max-width:600px){
+
+.polaroid{
+
+    /* transform:scale(.55); */
+
+    position:absolute;
+
+    top:20%;
+    left:0;
+    width:100px;
+    height:10px;
+
+}
+
+}
