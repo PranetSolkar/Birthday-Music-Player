@@ -20,14 +20,13 @@ const App = () => {
   const [currentVolume, setCurrentVolume] = useState(1);
   const [currentTitle, setCurrentTitle] = useState("");
   const [currentArtist, setCurrentArtist] = useState("");
-  const [showCollection, setShowCollection] = useState(true);
-  const [showGallery, setShowGallery] = useState(false);
   const [isReturning, setIsReturning] = useState(false);
 
   // const discControls = useAnimationControls();
   const playerControls = useAnimationControls();
   const toneArmControls = useAnimationControls();
   const fadeTitle = useAnimationControls();
+
   //Gallery Animation Controls
   const happyControls = useAnimationControls();
   const birthdayControls = useAnimationControls();
@@ -44,7 +43,8 @@ const App = () => {
 
   const [loading, setLoading] = useState(true);
 
-  //useEffect
+
+  //Audio Play useEffect
   useEffect(() => {
     audioRef.current.onloadedmetadata = () => {
       setDuration(audioRef.current.duration);
@@ -56,11 +56,11 @@ const App = () => {
       nextSong();
     };
 
-    
   }, []);
 
-  useEffect(() => {
 
+  //Gallery useEffect
+  useEffect(() => {
     if(!startGalleryIntro) return;
 
     async function playIntro(){
@@ -102,8 +102,6 @@ const App = () => {
         //     duration:7
         //   }
         // });
-        // setIntroPlayed(false);
-        // setStartGalleryIntro(false);
     }
     playIntro();
   }, [startGalleryIntro]);
@@ -118,7 +116,7 @@ const App = () => {
   }, [darkMode]);
 
 
-  // Loader Effect
+  // Loader useEffect
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const timer = setTimeout(() => {
@@ -130,12 +128,13 @@ const App = () => {
         document.body.style.overflow="auto";
         clearTimeout(timer);
     }
-},[]);
+  },[]);
     
 
 
   //brain of website
   async function handleSongClick(song) {
+
     if(!currentSong){
       setCurrentSong(song);
       setCurrentTitle(song.title);
@@ -148,13 +147,14 @@ const App = () => {
       })
       audioRef.current.src = song.audio;
       setDiscRotation(true);
-
       await autoShowGallery();
       
       return;
     }
 
+
     console.log("newSong")
+
 
     if(currentSong){
       setNewSong(song);
@@ -183,38 +183,14 @@ const App = () => {
         })
         setCurrentTitle("");
         setCurrentArtist("");
-        audioRef.current.src = null;
+        // audioRef.current.src = null;
+        audioRef.current.removeAttribute("src");
+        audioRef.current.load();
         
-        
-
-        
-      }
-      // else{
-      //   await toneArmControls.start({
-      //       rotate: 25,
-      //       transition: {
-      //           duration: 1
-      //       }
-      //   });
-      //   playerControls.start({
-      //       rotate: 360,
-      //       transition: {
-      //           duration: 5,
-      //           repeat: Infinity,
-      //           ease: "linear"
-      //       }
-      //   });
-        
-      //   audioRef.current.play();
-      //   setIsPlaying(true);
-      // }
+      } 
     }
     setIsReturning(true);
     setCurrentSong(null);
-  
-
-    
-
 
   }
 
@@ -234,7 +210,6 @@ const App = () => {
       });
       audioRef.current.pause();
       setIsPlaying(false);
-
       
     }
     else{
@@ -259,14 +234,17 @@ const App = () => {
 
   }
 
-  function previousSong(){
+  //-------------Functions--------------------
+
+  async function previousSong(){
     if (!currentSong) return;
     const currentIndex = songs.findIndex(
       songs => songs.id === currentSong.id
     );
     const previousIndex = (currentIndex - 1 + songs.length) % songs.length;
-    handleSongClick(songs[previousIndex]);
+    await handleSongClick(songs[previousIndex]);
   }
+
 
   async function nextSong(){
     if (!currentSong) return;
@@ -277,15 +255,18 @@ const App = () => {
     await handleSongClick(songs[nextIndex]);
   }
 
+
   function handleSeek(event){
     audioRef.current.currentTime = event.target.value;
     setCurrentTime(event.target.value);
   }
 
+
   function handleVolume(){
     audioRef.current.volume = event.target.value;
     setCurrentVolume(Math.floor(event.target.value*100));
   }
+
 
   function formatTime(seconds){
     if(!seconds) return "0:00";
@@ -306,8 +287,6 @@ const App = () => {
     },6000);
 
 }
-
-
 
 
   return (
@@ -342,7 +321,7 @@ const App = () => {
               className="themeSwitch"
               onClick={() => setDarkMode(!darkMode)}  
             >
-                {darkMode ? "☀" : "🌙"}
+                {darkMode ? "☀" : "☀"}
 
             </button>
             <LayoutGroup>
@@ -350,47 +329,47 @@ const App = () => {
             
             <div className='mainContainer'>
               <div className= 'contentArea'>
-              <AnimatePresence>
+                <AnimatePresence>
 
-              <motion.div 
-                className= { galleryMode ? "songContainerHidden" : 'songContainer1' }
-                >
-                {
-                  songs.map((song)=>(
-                  
-                    <VinylDisc 
-                      key={song.id} 
-                      song={song} 
-                      onClick={()=>handleSongClick(song)} 
-                      currentSong={currentSong} 
-                      isPlaying={isPlaying}           
+                  <motion.div 
+                    className= { galleryMode ? "songContainerHidden" : 'songContainer1' }
+                    >
+                    {
+                      songs.map((song)=>(
+                      
+                        <VinylDisc 
+                          key={song.id} 
+                          song={song} 
+                          onClick={()=>handleSongClick(song)} 
+                          currentSong={currentSong} 
+                          isPlaying={isPlaying}           
+                          />
+                      ))
+                    }
+                  </motion.div>
+              
+                </AnimatePresence>
+
+
+                <AnimatePresence>
+
+                  <motion.div 
+                    className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
+                    >
+                    {/* Photo Gallery */}
+                    {/* {galleryMode && <Gallery/>} */}
+                    {/* {galleryMode && <Gallery introPlayed={introPlayed} happy={happy}/>} */}
+                    <Gallery 
+                      galleryMode={galleryMode} 
+                      happyControls={happyControls}
+                      birthdayControls={birthdayControls}
+                      nameControls={nameControls}
+                      messageControls={messageControls}
+                      photoControls={photoControls}
                       />
-                  ))
-                }
-              </motion.div>
-              
-              </AnimatePresence>
-
-
-              <AnimatePresence>
-
-                <motion.div 
-                  className= { galleryMode ? "galleryVisible" : 'galleryHidden' }
-                  >
-                  {/* Photo Gallery */}
-                  {/* {galleryMode && <Gallery/>} */}
-                  {/* {galleryMode && <Gallery introPlayed={introPlayed} happy={happy}/>} */}
-                  <Gallery 
-                    galleryMode={galleryMode} 
-                    happyControls={happyControls}
-                    birthdayControls={birthdayControls}
-                    nameControls={nameControls}
-                    messageControls={messageControls}
-                    photoControls={photoControls}
-                    />
-                </motion.div>
-              
-              </AnimatePresence>
+                  </motion.div>
+                
+                </AnimatePresence>
               </div>
 
               <div className='rightPanel'>

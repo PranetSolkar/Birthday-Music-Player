@@ -13,45 +13,30 @@ const VinylDisc = (props) => {      //either write props in the argument or {son
       <div className={styles.vinyl}>
         {!isSelected && (
           <motion.div 
+            className={styles.outerDisc}
             layoutId={`song-${props.song.id}`} 
             onClick={props.onClick} 
-            className={styles.outerDisc}
-
-            // whileHover={{
-            //   scale: 2,
-            //   rotate: 360
-            // }}
-
-            // transition={{
-            //     duration: 3
-            // }}
             
             >
             <div className={styles.grooves}>
               <div className={styles.innerCircle1}>
                 <div className={styles.img}>
-                  <img src={props.song.img} alt="song cover" />
+                  <img src={props.song.img} alt={props.song.alt} />
                 </div>
               </div>
             </div>
           </motion.div>
         )}
 
-        {/* <div className={styles.vinylTitle}>
-          <h2>{props.song.title}</h2>
-          <p>{props.song.artist}</p>
-        </div> */}
       </div>
       
 
       <div className={styles.vinylTitle}>
-          <h2>{props.song.title}</h2>
-          <p>{props.song.artist}</p>
-        </div>
-
+        <h2>{props.song.title}</h2>
+        <p>{props.song.artist}</p>
+      </div>
 
     </div>
-    
   )
 }
 

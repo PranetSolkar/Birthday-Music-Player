@@ -4,33 +4,21 @@ import { motion } from 'framer-motion'
 
 const Arm = (props) => {
 
-    console.log("Arm rendered");
-    console.log("isPlaying =", props.isPlaying);
-
   return (
     <div>
         <div className={styles.arm}>
             <div className={styles.rectangle}>   
             </div>
+
             <div className={styles.line}>
             </div>
 
             <div className={styles.outerCircle}>
-        
             </div>
 
             <motion.div     
-                animate={props.toneArmControls}
-                // animate={{
-                //     rotate: props.discRotation ? 27 : 0
-
-                // }}        
-                // transition={{
-                //     duration: 2
-
-                // }}
                 className={styles.pivot}
-
+                animate={props.toneArmControls}
                 onAnimationComplete={()=>{
                     props.audioRef.current.play();
                     props.setIsPlaying(true);
@@ -41,6 +29,7 @@ const Arm = (props) => {
                 <div className={styles.armExtend}>
                     <div className={styles.extend1}>
                     </div>
+                    
                     <div className={styles.extend2}>
                     </div>
 

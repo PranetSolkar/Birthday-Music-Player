@@ -1,7 +1,6 @@
 .middleTempTop{
     height: 220px;
     width: 220px;
-    background-color: blue;
     margin: auto;
     border-radius: 50%;
     position:absolute;
@@ -9,7 +8,6 @@
     left: 15px;
     right: 15px;
     bottom: 15px;
-    
 }
 
 .middleTemp{
@@ -23,7 +21,6 @@
     right: 15px;
     bottom: 15px;
     z-index:9;
-    
 }
 
 .outerDisc{

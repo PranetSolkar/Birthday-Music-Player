@@ -10,7 +10,6 @@ const Gramophone = (props) => {
 
    
     <div className={styles.container}>
-      {/* <h1>hello</h1> */}
       <div className={styles.base}>
         <div className={styles.baseTop}>
           <div className={styles.leftRound}>

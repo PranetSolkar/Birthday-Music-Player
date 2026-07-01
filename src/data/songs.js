@@ -10,9 +10,10 @@ import suit_tieCover from '../assets/VinylImages/suit_tie.jpeg'
 export const songs = [{
     id: 1,
     title: "Paradise" ,
+    artist: "Coldplay",
     audio: paradiseAudio,
     img: paradiseCover,
-    artist: "Coldplay"
+    alt: "paradise"
 },
 
 {

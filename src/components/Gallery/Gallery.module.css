@@ -12,8 +12,7 @@
     /* background-color: #c9184a50; */
     background-color: var(--gallery);
     border-radius: 13px;
-    /* padding: 12px; */
-    /* color: black; */
+
     color: var(--gallery-color);
     
     position:absolute;
@@ -30,9 +29,7 @@
     margin-top:-5px;
     transform:translateX(-50%);
     font-size:6rem;
-    /* font-family: "Dancing Script", cursive; */
     font-family: "Great Vibes", cursive;
-    /* font-family: "Waterfall", cursive; */
     font-weight: 500;
     white-space:nowrap;
     overflow:hidden;
@@ -44,9 +41,11 @@
     flex-direction:column;
     align-items:center;
 }
-/* span{
-    font-weight: 100;
-} */
+.name{
+    width:700px;
+    text-align:center;
+    /* font-size:3.7rem; */
+}
 
 
 .messageWrapper{
@@ -86,22 +85,17 @@
     font-family: "Charm", cursive;
     font-size: 20px;
     font-weight: 600;
-    /* background-color: blue; */
 }
 .message1Content1{
     margin-top: 0;
     margin-bottom: -5px;
     font-family: "Charm", cursive;
-    /* font-family: "Dancing Script", cursive; */
     font-size: 18px;
     letter-spacing: 1px;
-    
-    /* background-color: brown; */
 }
 .message1Content2{
     margin-top:0;
     font-family: "Charm", cursive;
-    /* font-family: "Dancing Script", cursive; */
     font-size: 18px;
     letter-spacing: 1px;
 }
@@ -124,10 +118,6 @@
     flex-direction: column;
     gap: 0;
 }
-/* .message2 p{
-    margin: 0;
-    
-} */
 .message2Title{
     margin-top: 20px;
     margin-bottom: 0;
@@ -284,7 +274,7 @@ img{
     width:100%;
     height:100%;
     z-index:21;
-    transform:scale(1.1);
+    transform:scale(1);
 
 }
 
@@ -306,7 +296,7 @@ img{
 
     transform:translateX(-50%);
 
-    font-size:4rem;
+    font-size:3.8rem;
 
     line-height:1.2;
 
@@ -319,7 +309,7 @@ img{
     position:absolute;
     margin:0;
 
-    top:270px;
+    top:245px;
 
     left:50%;
 

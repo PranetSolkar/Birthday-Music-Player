@@ -20,9 +20,48 @@ const Controls = (props) => {
         <div className={styles.control}>
 
             <div className={styles.controlBtn}>
-                <button onClick={props.previousSong} className={styles.back}><SkipBack /></button>
+                {/* <button onClick={props.previousSong} className={styles.back}><SkipBack /></button> */}
+                {/* <p className={styles.company}>Harmony Vinyl Co.</p> */}
+                <div className={`${styles.visualizer} ${
+                                    props.isPlaying ? styles.playing : ""
+                                }`}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <button onClick={props.toggleMusic} className={styles.play_pause}> {props.isPlaying? <Pause/> : <Play />} </button>
-                <button onClick={props.nextSong} className={styles.next}><SkipForward /></button>
+                {/* <button onClick={props.nextSong} className={styles.next}><SkipForward /></button> */}
+                {/* <button onClick={props.previousSong} className={styles.back}>Vintage Vinyl Co.</button> */}
+                <div className={`${styles.visualizer2} ${
+                                    props.isPlaying ? styles.playing : ""
+                                }`}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
             </div>
 
 
@@ -40,9 +79,6 @@ const Controls = (props) => {
             </div>
 
         </div>
-
-        
-        
 
         {/* <label>Volume: {props.currentVolume}</label>
         <input 

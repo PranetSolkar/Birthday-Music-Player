@@ -6,65 +6,40 @@ const Player = (props) => {
     const activeSong = props.currentSong || props.newSong
 
     if (!props.currentSong) return null;
-    if (!activeSong) return null;
+    // if (!activeSong) return null;
 
     return (
-        <motion.div
-            // layoutId={`song-${props.currentSong.id}`}
-            // // layoutId={`song-${activeSong.id}`}
-            // className={styles.middleTempTop}
-            // onLayoutAnimationComplete={()=>{
-            //     props.setIsPlaying(true)
-            //     props.toggleMusic()
-                
-            // }}
-            // animation={{
-            //     rotate: props.isPlaying? 360 : 0 
-            // }}
-        
-            // transition={{
-            //     duration: 2,
-            //     ease: "linear" 
-            // }}
-            
-            >
+        <motion.div>
             <motion.div 
+                className={styles.middleTemp}
                 layoutId={`song-${props.currentSong.id}`} 
+                // layoutId={`song-${activeSong.id}`} 
                 onLayoutAnimationComplete={()=>{
                     // props.setIsPlaying(true)
-                    props.toggleMusic()
-                    
 
+                    // props.toggleMusic()
+                    
+                    // if(props.newSong){
+                    //     props.setCurrentSong(props.newSong);
+                    //     props.setNewSong(null);
+                    //     console.log("hello")
+                    // }
+
+                    props.toggleMusic();
                     if(props.newSong){
                         props.setCurrentSong(props.newSong);
                         props.setNewSong(null);
-                        console.log("hello")
                     }
+                    // else{
+                    //     props.toggleMusic();
+                    // }
                     
                 }}
                 transition={{
                     duration: 2,
                     ease: "linear" 
                 }}
-                className={styles.middleTemp}
                 animate={props.playerControls}
-                // animate={{
-                //     rotate: props.isPlaying? 360 : 0 
-                // }}
-                // transition={{
-                //     duration: 3,
-                //     repeat: Infinity,
-                //     ease: "linear" 
-                // }}
-
-                // onAnimationComplete={()=>{
-
-                //     if(props.newSong){
-                //         props.setCurrentSong(props.newSong);
-                //         props.setNewSong(null);
-                //     }
-                // }}
-                    
                 
                 >
                 <div onClick={props.onClick} className={styles.outerDisc}>
@@ -72,6 +47,7 @@ const Player = (props) => {
                             <div className={styles.innerCircle1}>
                             <div className={styles.img}>
                                 <img src={props.currentSong.img} alt="song cover" />
+                                {/* <img src={activeSong.img} alt="song cover" /> */}
                             </div>
                             </div>
                         </div>

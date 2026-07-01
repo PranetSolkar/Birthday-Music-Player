@@ -24,7 +24,6 @@
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    /* background: repeating-radial-gradient( circle, #111 0px, #111 2px, rgb(87, 82, 82) 3px, #111 4px); */
     /* transition: transform 0.5s ease; */
     display: flex;
     align-items: center;
@@ -56,9 +55,6 @@
     transform: scale(1.03);
 } */
 
-/* .parent:hover{
-    animation: spin 7s linear infinite;
-} */
 
 .innerCircle1{
     background-color: #222;
@@ -90,25 +86,21 @@
 .vinylTitle{
     width: 200px;
     padding: 0;
-    /* background-color: blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     margin: 1px 0 0 14px;
-    
 }
 .vinylTitle h2{
-    /* background-color: green; */
     margin: 0;
 }
 .vinylTitle p{
-    /* background-color: #fff; */
     margin: 0;
 }
 
 
-
+/* ---------- Large Laptop ---------- */
 
 @media (max-width:1200px){
 
@@ -124,6 +116,8 @@
 
 }
 
+
+/* ---------- Tablet ---------- */
 
 @media (max-width:900px){
 
@@ -141,6 +135,8 @@
 
 }
 
+
+/* ---------- Mobile ---------- */
 
 @media (max-width:600px){
 
