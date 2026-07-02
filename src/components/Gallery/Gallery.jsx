@@ -4,15 +4,15 @@ import { motion , useAnimationControls } from 'framer-motion'
 import { div } from 'framer-motion/client'
 import Polaroid from './Polaroid'
 
-import paradiseCover from '../../assets/VinylImages/coldplay_paradise.jpg'
-import dusty from '../../assets/VinylImages/dusty.jpeg'
-import paradise1 from '../../assets/VinylImages/paradise1.jpeg'
+// import paradiseCover from '../../assets/VinylImages/coldplay_paradise.jpg'
+// import dusty from '../../assets/VinylImages/dusty.jpeg'
+// import paradise1 from '../../assets/VinylImages/paradise1.jpeg'
 
 const Gallery = (props) => {
 
     const photos = [
     {
-        src: paradiseCover,
+        src: "/Photos/AnushkaBirthday1.jpg",
         caption:"Best Day ❤️",
         top:"20%",
         left:"10%",
@@ -23,7 +23,7 @@ const Gallery = (props) => {
     },
 
     {
-        src: dusty,
+        src: "/Photos/Siddhi.jpg",
         caption:"Goa Trip",
         top:"50%",
         left:"20%",
@@ -34,7 +34,7 @@ const Gallery = (props) => {
     },
 
     {
-        src: paradise1,
+        src: "/Photos/SiddhiBirthday.jpg",
         caption:"Memories",
         top:"30%",
         left:"60%",

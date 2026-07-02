@@ -159,7 +159,7 @@ const App = () => {
     if(currentSong){
       setNewSong(song);
       // toggleMusic();
-      if(isPlaying || newSong){
+      if(isPlaying ){
         console.log("newSongif")
         await toneArmControls.start({
             rotate: 0,

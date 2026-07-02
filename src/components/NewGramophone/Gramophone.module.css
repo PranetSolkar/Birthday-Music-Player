@@ -79,6 +79,7 @@
     margin: auto;
     border-radius: 100%;
     position:relative;
+    z-index:10;
 
     /* ai */
     /* height: 220px;

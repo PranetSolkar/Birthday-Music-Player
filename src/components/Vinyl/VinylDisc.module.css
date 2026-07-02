@@ -3,11 +3,20 @@
     width: 220px;
 
     transform-origin:top center;
+    position:relative;
+}
+.wrapper{
+    margin:0;
+    padding:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .vinyl{
     z-index: 14;
-    /* position: absolute; */
+    position: relative;
     display: flex;
     align-items: center;
     /* justify-content: center; */
@@ -28,8 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    /* z-index:9; */
+    position: absolute;
+    z-index:11;
 }
 
 .grooves{
@@ -84,19 +93,40 @@
 }
 
 .vinylTitle{
-    width: 200px;
+    width: 220px;
+    /* width:100%; */
     padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 5px;
     margin: 1px 0 0 14px;
 }
 .vinylTitle h2{
+    width:100%;
     margin: 0;
+    text-align:center;
 }
 .vinylTitle p{
+    width:220px;
+    text-align:center;
     margin: 0;
+    white-space: nowrap;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+
+    mask-image: linear-gradient(
+        to right,
+        black 80%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        black 80%,
+        transparent 100%
+    );
 }
 
 
