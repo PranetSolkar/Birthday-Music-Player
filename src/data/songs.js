@@ -46,8 +46,8 @@ export const songs = [
 
 {
     id: 6,
-    title: "London Thumakda",
-    artist: "Labh Janjua, Neha Kakkar",
+    title: "London Thumakada",
+    artist: "Labh Janjua,Sonu Kakkar, Neha Kakkar",
     audio: "/songs/Queen-London_Thumakda.mp3",
     img: "/VinylImages/queen.jpeg",
     alt: "London Thumakda"
@@ -56,7 +56,7 @@ export const songs = [
 {
     id: 7,
     title: "The Breakup Song",
-    artist: "Arjit Singh, Jonita Gandhi",
+    artist: "Pritam, Arjit Singh, Jonita Gandhi, Badshah",
     audio: "/songs/The_Breakup_Song-Ae_Dil_Hai_Mushkil.mp3",
     img: "/VinylImages/TheBreakupSong.jpeg",
     alt: "The Breakup Song"
@@ -65,7 +65,7 @@ export const songs = [
 {
     id: 8,
     title: "Aashiqana",
-    artist: "Justin Timberlake",
+    artist: "Chaar Diwari, Indian Ocean, gini",
     audio: "/songs/Aashiqana-Chaar_Diwari.mp3",
     img: "/VinylImages/Aashiqana.jpeg",
     alt: "Aashiqana"
@@ -74,7 +74,7 @@ export const songs = [
 {
     id: 9,
     title: "The Shadow Light",
-    artist: "Justin Timberlake",
+    artist: "Gorillaz, Asha Bhosle, Gruff Rhys, Ajay Parsanna",
     audio: "/songs/TheShadowLight-Gorillaz.mp3",
     img: "/VinylImages/TheShadowLight.jpeg",
     alt: "Meet Me At Our Spot"  
@@ -83,7 +83,7 @@ export const songs = [
 {
     id: 10,
     title: "Sooraj Ki Baahon Mein",
-    artist: "Justin Timberlake",
+    artist: "Dominique Cerejo, Clinton Cerejo, Loy Mendonsa",
     audio: "/songs/Sooraj_Ki_Baahon_Mein-Zindagi_Na_Milegi_Dobara.mp3",
     img: "/VinylImages/znmd.jpeg",
     alt: "Sooraj Ki Baahon Mein" 
@@ -92,7 +92,7 @@ export const songs = [
 {
     id: 11,
     title: "Meet Me At Our Spot",
-    artist: "Justin Timberlake",
+    artist: "THE ANXIETY, WILLOW, Tyler Cole",
     audio: "/songs/Meet_Me_At_Our_Spot.mp3",
     img: "/VinylImages/meet_me_at_our_spot.jpeg",
     alt: "Meet Me At Our Spot" 
@@ -100,7 +100,7 @@ export const songs = [
 {
     id: 12,
     title: "Young Dumb & Broke",
-    artist: "Justin Timberlake",
+    artist: "Khalid",
     audio: "public\songs\Khalid-YoungDumb&Broke.mp3",
     img: "/VinylImages/young-dumb-broke.jpeg",
     alt: "Sooraj Ki Baahon Mein" 

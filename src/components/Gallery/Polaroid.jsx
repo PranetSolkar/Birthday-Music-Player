@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import styles from './Polaroid.module.css'
 
 const Polaroid = ({photo}) => {
-    console.log(photo.src)
+    
   return (
     <motion.div 
         className={styles.polaroid}
@@ -14,8 +14,8 @@ const Polaroid = ({photo}) => {
             top: photo.top,
             left: photo.left,
             rotate: photo.rotate,
-            width: photo.width,
-            height: photo.height
+            width: photo.divwidth,
+            height: photo.divheight
         }}
         animate={{
             y: [0, -10, 0]
@@ -27,7 +27,15 @@ const Polaroid = ({photo}) => {
         }}
         >
 
-        <img src={photo.src} alt="" />
+        <img 
+            src={photo.src} 
+            alt="" 
+            style={{
+                // width: photo.width,
+                height: photo.height
+            }}
+
+        />
         <p className={styles.caption}>
             {photo.caption}
         </p>

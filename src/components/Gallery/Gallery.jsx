@@ -13,35 +13,106 @@ const Gallery = (props) => {
     const photos = [
     {
         src: "/Photos/AnushkaBirthday1.jpg",
-        caption:"Best Day ❤️",
+        caption:"Best Moments Together ❤️",
         top:"20%",
-        left:"10%",
+        left:"11%",
         rotate:-8,
         floatSpeed:4,
-        width:"220px",
-        height:"280px"
+        divwidth:"220px",
+        divheight:"290px",
+        // width: "200px",
+        height: "220px"
     },
 
     {
         src: "/Photos/Siddhi.jpg",
-        caption:"Goa Trip",
-        top:"50%",
+        caption:"Birthday Queen 👑",
+        top:"40%",
         left:"20%",
         rotate:6,
         floatSpeed:5,
-        width:"220px",
-        height:"280px"
+        divwidth:"220px",
+        divheight:"330px",
+        // width: "200px",
+        height: "260px"
     },
 
     {
         src: "/Photos/SiddhiBirthday.jpg",
-        caption:"Memories",
+        caption:"Keep Smiling 😊",
         top:"30%",
         left:"60%",
-        rotate:-4,
+        rotate: 4,
         floatSpeed:3,
-        width:"220px",
-        height:"280px"
+        divwidth:"220px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
+    },
+
+    {
+        src: "/Photos/Zeal1.jpg",
+        caption:"Best Moments Together ❤️",
+        top:"20%",
+        left:"45%",
+        rotate:-8,
+        floatSpeed:3,
+        divwidth:"220px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
+    },
+
+    {
+        src: "/Photos/AnushkaSiddhi.jpg",
+        caption:"Some Smiles Never Fade 🌸",
+        top:"20%",
+        left:"-22%",
+        rotate:17,
+        floatSpeed:6,
+        divwidth:"220px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
+    },
+
+    {
+        src: "/Photos/Zeal2.jpg",
+        caption:"Laughter Never Ends 😂",
+        top:"40%",
+        left:"-4%",
+        rotate:-9,
+        floatSpeed:5,
+        divwidth:"360px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
+    },
+
+    {
+        src: "/Photos/Zeal3.jpg",
+        caption:"Zeal3",
+        top:"30%",
+        left:"30%",
+        rotate:10,
+        floatSpeed:6,
+        divwidth:"280px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
+    },
+
+    {
+        src: "/Photos/AnushkaBirthday2.jpg",
+        caption:"Forever Glowing ✨",
+        top:"20%",
+        left:"80%",
+        rotate:5,
+        floatSpeed:5,
+        divwidth:"220px",
+        divheight:"300px",
+        // width: "200px",
+        height: "220px"
     }
     ];
 

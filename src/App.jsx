@@ -153,14 +153,14 @@ const App = () => {
     }
 
 
-    console.log("newSong")
+  
 
 
     if(currentSong){
       setNewSong(song);
       // toggleMusic();
       if(isPlaying ){
-        console.log("newSongif")
+      
         await toneArmControls.start({
             rotate: 0,
             transition: {
@@ -279,7 +279,7 @@ const App = () => {
   function autoShowGallery(){
     setTimeout(()=>{
         setGalleryMode(true);
-        console.log("gallery mode true")
+        // console.log("gallery mode true")
         // setStartGalleryIntro(true);
         setTimeout(()=>{
           setStartGalleryIntro(true);

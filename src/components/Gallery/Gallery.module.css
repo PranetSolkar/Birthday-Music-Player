@@ -412,11 +412,12 @@ img{
 
     z-index:20;
 
-    top:20%;
+    top:10%;
     left:0;
+    /* right:90%; */
     /* width:50%;
     height:50%; */
-    transform:scale(.7);
+    transform:scale(.62);
     /* z-index:21; */
 
 }

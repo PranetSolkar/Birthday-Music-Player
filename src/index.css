@@ -28,6 +28,7 @@
     --message: #ffe5ec;
 
     /* Polaroid */
+    --polaroid-bg:#f5eccd;
     --polaroid-color: black;
 
 
@@ -84,6 +85,7 @@
     --message:#323547;
 
     /* Polaroid */
+    --polaroid-bg: #dfddf3;
     --polaroid-color: black;
 
     /* Text */

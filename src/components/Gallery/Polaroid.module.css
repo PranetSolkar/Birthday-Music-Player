@@ -1,5 +1,7 @@
 .polaroid{
-    background-color: #f5eccd;
+    /* background-color: #f5eccd; */
+    /* background-color: #e3e2f0; */
+    background-color: var(--polaroid-bg);
     color: var(--polaroid-color);
 
     /* height: 220px;
@@ -19,7 +21,7 @@
 
 .polaroid img{
     width:100%;
-    height:180px;
+    /* height:250px; */
     object-fit:cover;
     border-radius:4px;
     pointer-events: none;
