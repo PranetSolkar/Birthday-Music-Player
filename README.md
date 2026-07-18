@@ -6,7 +6,7 @@ The project was designed as a unique digital birthday experience featuring smoot
 
 ## 🌐 Live Demo
 
-👉 
+👉 https://gramophone-music-player.vercel.app/
 
 ---
 
