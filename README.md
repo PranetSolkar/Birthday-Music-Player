@@ -1,4 +1,4 @@
-# 🎵 Vinyl Birthday Music Player
+# 🎵 Gramophone Music Player
 
 An interactive vinyl-inspired music player built with **React, Vite, and Framer Motion** that combines a nostalgic record player with a personalized memory gallery.
 
