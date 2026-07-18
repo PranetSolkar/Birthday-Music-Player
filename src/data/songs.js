@@ -1,65 +1,65 @@
 export const songs = [
 {
     id: 1,
-    title: "Gallan Goodiyaan",
-    artist: "Shankar Mahadevan, Farhan Akhtar",
-    audio: "/songs/Gallan_Goodiyaan-Dil_Dhadakne_Do.mp3",
-    img: "/VinylImages/Gallan_Goodiyan.jpg",
-    alt: "Gallan Goodiyaan"
+    title: "Aaj Na",
+    artist: "Ritviz",
+    audio: "/songs/MIMMI - Aaj Na [Official Music Video].mp3",
+    img: "/VinylImages/mimmi.jpeg",
+    alt: "Inkem Inkem"
 },
 
 {
     id: 2,
-    title: "Ilahi",
-    artist: "Pritam, Arijit Singh, AB",
-    audio: "/songs/Illahi-Yeh_Jawaani_Hai_Deewani.mp3",
-    img: "/VinylImages/illahi.jpeg",
-    alt: "Illahi"
+    title: "Whatever It Takes",
+    artist: "Imagine Dragons",
+    audio: "/songs/Imagine Dragons - Whatever It Takes (Official Music Video).mp3",
+    img: "/VinylImages/Whatever_It_Takes.jpeg",
+    alt: "Whatever It Takes"
 },
 
 {
     id: 3,
-    title: "Kar Gayi Chull",
-    artist: "Badshah, Amaal Malik",
-    audio: "/songs/Kar_Gayi_Chull-Kapoor&Sons.mp3",
-    img: "/VinylImages/kar_gayi_chull.jpeg",
-    alt: "Kar Gayi Chull"
+    title: "Paradise",
+    artist: "Coldplay",
+    audio: "/songs/Coldplay   Paradise Instrumental.mp3",
+    img: "/VinylImages/coldplay_paradise.jpg",
+    alt: "Paradise"
 },
 
 {
     id: 4,
-    title: "Nachde Ne Saare",
-    artist: "Jasleen Royal, Harshdeep Kaur",
-    audio: "/songs/Nachde_Ne_Saare-Baar_Baar_Dekho.mp3",
-    img: "/VinylImages/nachde_ne_saare.jpeg",
-    alt: "Nachde Ne Saare"
+    title: "Mafi",
+    artist: "Shreya Ghoshal, Shantanu Moitra, Swanand Kirkire",
+    audio: "/songs/Maafi  Music Video Pritam and Pedro  Shreya Ghosal, Swanand Kirkire, Shantanu Moitra.mp3",
+    img: "/VinylImages/Mafi.avif",
+    alt: "Mafi"
 },
 
 {
     id: 5,
-    title: "Patakha Guddi",
-    artist: "Sultana, Jyoti Nooran",
-    audio: "/songs/Patakha_Guddi-Highway.mp3",
-    img: "/VinylImages/PatakhaGuddi.jpeg",
-    alt: "Patakha Guddi"
+    title: "Choo Lo",
+    artist: "The Local Train",
+    audio: "/songs/The Local Train - Aalas Ka Pedh - Choo Lo (Official Audio).mp3",
+    img: "/VinylImages/Choo_Lo.jpg",
+    alt: "Choo Lo"
 },
 
 {
     id: 6,
-    title: "London Thumakada",
-    artist: "Labh Janjua,Sonu Kakkar, Neha Kakkar",
-    audio: "/songs/Queen-London_Thumakda.mp3",
-    img: "/VinylImages/queen.jpeg",
-    alt: "London Thumakda"
+    title: "Chimbh Bhijalele",
+    artist: "Shankar Mahadevan, Priti Kamath, Ajay-Atul",
+    audio: "/songs/Chimbh Bhijalele - चब भजलल  Marathi Song  Ajay-Atul  Shankar Mahadevan, Priti Kamath.mp3",
+    img: "/VinylImages/chimbh.jpeg",
+    alt: "Chimbh Bhijalele"
 },
 
 {
     id: 7,
-    title: "The Breakup Song",
-    artist: "Pritam, Arjit Singh, Jonita Gandhi, Badshah",
-    audio: "/songs/The_Breakup_Song-Ae_Dil_Hai_Mushkil.mp3",
-    img: "/VinylImages/TheBreakupSong.jpeg",
-    alt: "The Breakup Song"
+    title: "Choti Si Asha",
+    artist: "Minmini, A.R. Rahman",
+    audio: "/songs/Chhoti Si Aasha - Roja A.R. Rahman Madhoo Minmini Official Video Dil Hai Chotta Sa.mp3",
+    img: "/VinylImages/choti_si_asha.jpg",
+    alt: "Choti Si Asha"
 },
 
 {
@@ -77,16 +77,16 @@ export const songs = [
     artist: "Gorillaz, Asha Bhosle, Gruff Rhys, Ajay Parsanna",
     audio: "/songs/TheShadowLight-Gorillaz.mp3",
     img: "/VinylImages/TheShadowLight.jpeg",
-    alt: "Meet Me At Our Spot"  
+    alt: "The Shadow Light"  
 },
 
 {
     id: 10,
-    title: "Sooraj Ki Baahon Mein",
-    artist: "Dominique Cerejo, Clinton Cerejo, Loy Mendonsa",
-    audio: "/songs/Sooraj_Ki_Baahon_Mein-Zindagi_Na_Milegi_Dobara.mp3",
-    img: "/VinylImages/znmd.jpeg",
-    alt: "Sooraj Ki Baahon Mein" 
+    title: "Message Man",
+    artist: "Twenty One Pilots",
+    audio: "/songs/twenty one pilots - Message Man (Official Audio).mp3",
+    img: "/VinylImages/message_man.jpeg",
+    alt: "Message Man" 
 },
 
 {
@@ -103,6 +103,6 @@ export const songs = [
     artist: "Khalid",
     audio: "public\songs\Khalid-YoungDumb&Broke.mp3",
     img: "/VinylImages/young-dumb-broke.jpeg",
-    alt: "Sooraj Ki Baahon Mein" 
+    alt: "Young Dumb & Broke" 
 }
 ];
