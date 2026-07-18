@@ -1,55 +1,4 @@
 :root{
-    --bg-main:pink;
-    --songContainer:#cdb4db;
-    --songContainer-border:#9e005950;
-    --gallerySwitch-hover: #9e005970;
-    --gallerySwitch: #9e005950;
-    --gallerySwitch-color: black;
-    --gallerySwitch-border: #89023e80;
-
-    /* Gramophone */
-    --gramophone:#ffe5ec;
-    --gramophone-base:#9e0059;
-    --middleTemp: blueviolet;
-    --volume: #590d2280;
-    --control: lightcoral;
-    --control-border: #80000088;
-    --prev-next: black;
-    --play-pause: white;
-
-    /* ToneArm */
-    --arm: #ffe5ec;
-    --arm-circle: black;
-
-    /* Gallery */
-    --gallery:#c9184a50;
-    --gallery-color: black;
-    --gallery-border: #9e005990;
-    --message: #ffe5ec;
-
-    /* Polaroid */
-    --polaroid-bg:#f5eccd;
-    --polaroid-color: black;
-
-
-    --button:#9e005950;
-    --button-hover:#9e005980;
-    /* --text:#2b1d0e; */
-    --body-color:black;
-
-    --container-glow:
-    0 0 35px rgba(201,24,74,.30),
-    0 0 80px rgba(201,24,74,.18),
-    0 0 140px rgba(201,24,74,.10);
-}
-
-/* ==========================
-        DARK THEME
-========================== */
-
-[data-theme="dark"]{
-
-    /* Main */
     --bg-main:#111217;
     --songContainer:#2c2344;
     --songContainer-border:#7251c7;
@@ -99,7 +48,58 @@
     --container-glow:
     0 0 30px rgba(139,108,255,.34),
     0 0 75px rgba(139,108,255,.20),
-    0 0 120px rgba(139,108,255,.10);    
+    0 0 120px rgba(139,108,255,.10); 
+}
+
+/* ==========================
+        DARK THEME
+========================== */
+
+[data-theme="dark"]{
+
+    /* Main */   
+    --bg-main:pink;
+    --songContainer:#cdb4db;
+    --songContainer-border:#9e005950;
+    --gallerySwitch-hover: #9e005970;
+    --gallerySwitch: #9e005950;
+    --gallerySwitch-color: black;
+    --gallerySwitch-border: #89023e80;
+
+    /* Gramophone */
+    --gramophone:#ffe5ec;
+    --gramophone-base:#9e0059;
+    --middleTemp: blueviolet;
+    --volume: #590d2280;
+    --control: lightcoral;
+    --control-border: #80000088;
+    --prev-next: black;
+    --play-pause: white;
+
+    /* ToneArm */
+    --arm: #ffe5ec;
+    --arm-circle: black;
+
+    /* Gallery */
+    --gallery:#c9184a50;
+    --gallery-color: black;
+    --gallery-border: #9e005990;
+    --message: #ffe5ec;
+
+    /* Polaroid */
+    --polaroid-bg:#f5eccd;
+    --polaroid-color: black;
+
+
+    --button:#9e005950;
+    --button-hover:#9e005980;
+    /* --text:#2b1d0e; */
+    --body-color:black;
+
+    --container-glow:
+    0 0 35px rgba(201,24,74,.30),
+    0 0 80px rgba(201,24,74,.18),
+    0 0 140px rgba(201,24,74,.10);
 }
 
 
@@ -499,7 +499,7 @@ body{
 
     .themeSwitch{
         bottom:10px;
-        right:7px;
+        right:15px;
 
         width:31px;
         height:31px;

@@ -91,7 +91,7 @@ const Gallery = (props) => {
 
     {
         src: "/Photos/Zeal3.jpg",
-        caption:"Zeal3",
+        caption:"Happiness, Captured Forever 📸",
         top:"30%",
         left:"30%",
         rotate:10,

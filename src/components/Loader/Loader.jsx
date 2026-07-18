@@ -86,7 +86,7 @@ const Loader = () => {
             duration: .6,
           }}
         >
-          [Loading Memories...]
+          [Loading Music....]
         </motion.p>
       </motion.div>
     </motion.div>
